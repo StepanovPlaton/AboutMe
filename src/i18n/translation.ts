@@ -2,6 +2,7 @@ import { getResolvedSiteLang } from "@utils/language";
 import { en } from "./languages/en";
 import { ja } from "./languages/ja";
 import { zh } from "./languages/zh";
+import { ru } from "./languages/ru";
 import type I18nKey from "./i18nKey";
 
 
@@ -20,6 +21,8 @@ const map: { [key: string]: Translation } = {
     zh_cn: zh,
     ja: ja,
     ja_jp: ja,
+    ru: ru,
+    ru_ru: ru,
 };
 
 export function getTranslation(lang: string): Translation {

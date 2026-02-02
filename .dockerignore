@@ -1,0 +1,15 @@
+node_modules
+dist
+.astro
+.vercel
+.git
+.gitignore
+.env
+.env.local
+*.log
+.vscode
+.DS_Store
+README.md
+LICENSE
+docs
+screenshots
