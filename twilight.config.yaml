@@ -156,7 +156,31 @@ footer:
     enable: false
 particle:
     enable: false
+
 musicPlayer:
-    enable: false
+    enable: true
+    mode: "local"
+    local:
+        playlist:
+            -   id: 1
+                title: "Children of the Omnissiah (Warhammer 40,000: Mechanicus OST)"
+                artist: "Guillaume David"
+                cover: "assets/images/war.jpg"
+                url: "assets/music/war.mp3"
+                duration: 106
+            -   id: 2
+                title: "Move (Rimworld P-Music)"
+                artist: "Peppsen"
+                cover: "assets/images/rimworld.jpg"
+                url: "assets/music/rimworld.mp3"
+                duration: 204
+            -   id: 3
+                title: "Reflecting"
+                artist: "Michael Regner"
+                cover: "assets/images/reflecting.jpg"
+                url: "assets/music/reflecting.mp3"
+                duration: 90
+    autoplay: true
+
 pio:
     enable: false

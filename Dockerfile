@@ -11,7 +11,8 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Устанавливаем зависимости
-RUN pnpm install --frozen-lockfile
+# Если lockfile не синхронизирован, обновляем его автоматически
+RUN pnpm install
 
 # Копируем остальные файлы проекта
 COPY . .
