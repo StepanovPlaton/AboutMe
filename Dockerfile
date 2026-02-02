@@ -1,17 +1,23 @@
-# Stage 1: Build
-FROM node:22-alpine AS builder
+# Используем официальный Node.js образ
+FROM node:22-alpine
 
-# Set working directory
+# Устанавливаем pnpm глобально
+RUN npm install -g pnpm@9.14.4
+
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Copy package files
-COPY package.json package-lock.json* ./
+# Копируем файлы конфигурации пакетов
+COPY package.json pnpm-lock.yaml ./
 
-# Install dependencies
-RUN npm ci
+# Устанавливаем зависимости
+RUN pnpm install --frozen-lockfile
 
-# Copy source code
+# Копируем остальные файлы проекта
 COPY . .
+
+# Устанавливаем переменную окружения для Docker
+ENV DOCKER=true
 
 # Accept build arguments and set environment variables
 ARG OAUTH_GITHUB_CLIENT_ID
@@ -19,23 +25,16 @@ ARG OAUTH_GITHUB_CLIENT_SECRET
 ENV OAUTH_GITHUB_CLIENT_ID=${OAUTH_GITHUB_CLIENT_ID}
 ENV OAUTH_GITHUB_CLIENT_SECRET=${OAUTH_GITHUB_CLIENT_SECRET}
 
-# Build the application
-RUN npm run build
+# Собираем проект
+RUN pnpm run build
 
-# Stage 2: Production
-FROM nginx:alpine AS production
+# Открываем порт (Node.js adapter по умолчанию использует 4321)
+EXPOSE 4321
 
-# Remove default nginx config
-RUN rm -f /etc/nginx/conf.d/default.conf
+# Устанавливаем переменную окружения для порта
+ENV PORT=4321
+ENV HOST=0.0.0.0
 
-# Copy built files from builder stage
-COPY --from=builder /app/dist/client /usr/share/nginx/html
-
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 8091
-EXPOSE 8091
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Запускаем Astro сервер через Node.js adapter
+# В standalone режиме entry point находится в dist/server/entry.mjs
+CMD ["node", "dist/server/entry.mjs"]

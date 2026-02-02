@@ -7,6 +7,7 @@ import swup from "@swup/astro";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 import cloudflarePages from "@astrojs/cloudflare";
+import node from "@astrojs/node";
 import decapCmsOauth from "astro-decap-cms-oauth";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
@@ -34,7 +35,11 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 // Choose adapter depending on deployment environment
-const adapter = process.env.CF_PAGES ? cloudflarePages() : vercel({ mode: "serverless" });
+const adapter = process.env.CF_PAGES
+    ? cloudflarePages()
+    : process.env.DOCKER
+        ? node({ mode: "standalone" })
+        : vercel({ mode: "serverless" });
 
 export default defineConfig({
     site: siteConfig.siteURL,
