@@ -6,7 +6,6 @@ import { LinkPresets } from "@constants/link-presets";
 import { LinkPreset } from "@/types/config";
 import { UNCATEGORIZED } from "@constants/constants";
 import {
-    getAdvancedSkills,
     getSkillStats,
     getSkillsByCategory,
     getTotalExperience,
@@ -25,11 +24,14 @@ const subtitle = LinkPresets[LinkPreset.Skills].description;
 
 // 获取技能统计信息
 const stats = getSkillStats();
-const advancedSkills = getAdvancedSkills();
 const totalExperience = getTotalExperience();
 
-// 获取所有分类
-const categories = [...new Set(skillsData.map((skill) => skill.category))];
+// 定义分类顺序
+const categoryOrder = ["frontend", "backend", "devops", "ai", "native", "tools", "ide", "softskills", "others"];
+
+// 获取所有分类并按指定顺序排序
+const allCategories = [...new Set(skillsData.map((skill) => skill.category))];
+const categories = categoryOrder.filter(cat => allCategories.includes(cat));
 
 // 按分类获取技能
 const skillsByCategory = categories.reduce(
@@ -109,20 +111,6 @@ const allIcons = skillsData.map((skill) => skill.icon).filter(Boolean);
                     <div class="text-sm text-purple-600/70 dark:text-purple-400/70">{i18n(I18nKey.skillExperience)}</div>
                 </div>
             </div>
-
-            <!-- 专业技能 -->
-            {advancedSkills.length > 0 && (
-                <div class="mb-8">
-                    <h2 class="text-2xl font-bold text-black/90 dark:text-white/90 mb-4">
-                        {i18n(I18nKey.skillsAdvancedTitle)}
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {advancedSkills.map((skill) => (
-                            <SkillCard skill={skill} size="large" showProgress={true} showIcon={true} />
-                        ))}
-                    </div>
-                </div>
-            )}
 
             <!-- 按分类展示技能 -->
             <div class="space-y-8">

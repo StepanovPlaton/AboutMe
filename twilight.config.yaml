@@ -73,7 +73,13 @@ site:
         spinner:
             enable: true
             interval: 1.5
-    favicon: []
+    favicon:
+        -   src: "/favicon/favicon.ico"
+            theme: "light"
+            sizes: "96x96"
+        -   src: "/favicon/favicon.ico"
+            theme: "dark"
+            sizes: "96x96"
     bangumi:
         userId: "your-bangumi-id"
     generateOgImages: false
