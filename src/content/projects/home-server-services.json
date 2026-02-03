@@ -1,11 +1,17 @@
 {
-  "featured": false,
+  "sourceCode": "https://git.stepanovplaton.ru/StepanovPlaton/HomeServerServices",
+  "featured": true,
   "liveDemo": "",
   "startDate": "2025-12-10T08:00:00.000+04:00",
-  "techStack": [],
+  "techStack": [
+    "ProxmoxVE",
+    "OPNsense",
+    "Debian",
+    "Podman"
+  ],
   "status": "completed",
   "title": "Home Server Services",
   "tags": [],
-  "description": "Home Server Services - это полный набор сервисов в Docker для организации моего домашнего сервера!",
-  "category": "software"
+  "description": "Полный набор сервисов в Docker для организации моего домашнего сервера!",
+  "category": "proud"
 }
