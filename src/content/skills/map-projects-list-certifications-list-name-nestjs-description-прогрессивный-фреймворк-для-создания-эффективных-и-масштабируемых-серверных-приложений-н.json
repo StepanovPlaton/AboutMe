@@ -1,0 +1,13 @@
+{
+  "projects": [],
+  "certifications": [],
+  "name": "NestJS",
+  "description": "Прогрессивный фреймворк для создания эффективных и масштабируемых серверных приложений на основе программной платформы Node.js",
+  "icon": "logos:nestjs",
+  "category": "backend",
+  "level": "beginner",
+  "experience": {
+    "years": 0,
+    "months": 4
+  }
+}
