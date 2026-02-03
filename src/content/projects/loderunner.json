@@ -1,0 +1,15 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/LodeRunner",
+  "featured": false,
+  "liveDemo": "https://rutracker.org/forum/viewtopic.php?t=5885455",
+  "startDate": "2020-04-01T08:00:00.000+04:00",
+  "techStack": [
+    "Unity",
+    "C#"
+  ],
+  "status": "completed",
+  "title": "LodeRunner",
+  "tags": [],
+  "description": "Ремейк LodeRunner c Apple II c оригинальным набором уровней написанный на Unity (С#)",
+  "category": "history"
+}
