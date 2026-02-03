@@ -5,10 +5,7 @@
   "techStack": [
     "Kotlin",
     "Jetpack Compose",
-    "Material Design 3",
-    "Room",
-    "Glance",
-    "OkHttp"
+    "Material Design"
   ],
   "status": "completed",
   "title": "Расписание СамГУ",
