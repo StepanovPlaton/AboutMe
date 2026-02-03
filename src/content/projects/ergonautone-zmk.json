@@ -1,0 +1,11 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/ErgonautOne-ZMK",
+  "featured": false,
+  "startDate": "2023-12-31T08:00:00.000+04:00",
+  "techStack": [],
+  "status": "in-progress",
+  "title": "ErgonautOne-ZMK",
+  "tags": [],
+  "description": "Моя конфигурация ZMK для раздельной ортолинейной клавиатуры Ergonaut One",
+  "category": "other"
+}
