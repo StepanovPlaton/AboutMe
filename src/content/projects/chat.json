@@ -1,0 +1,22 @@
+{
+  "sourceCode": "https://git.stepanovplaton.ru/StepanovPlaton/Chat",
+  "featured": false,
+  "startDate": "2025-05-16T08:00:00.000+04:00",
+  "techStack": [
+    "TypeScript",
+    "React 19",
+    "Next.js 15 (App Router)",
+    "Nest 11",
+    "TypeORM",
+    "Tailwind CSS",
+    "Yup",
+    "SWR",
+    "Swagger UI Express",
+    "PostgreSQL"
+  ],
+  "status": "completed",
+  "title": "Chat",
+  "tags": [],
+  "description": "Анонимный мессенджер. Тестовое задание перед собеседованием. Написано за 10 часов",
+  "category": "proud"
+}
