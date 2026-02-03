@@ -7,7 +7,7 @@ export interface Skill {
     name: string;
     description: string;
     icon: string; // Iconify icon name
-    category: "ai" | "frontend" | "backend" | "native" | "devops" | "ide" | "tools" | "others";
+    category: "ai" | "frontend" | "backend" | "native" | "devops" | "ide" | "tools" | "softskills" | "others";
     level: "beginner" | "intermediate" | "advanced" | "expert";
     experience: {
         years: number;
@@ -41,6 +41,7 @@ export const getSkillStats = () => {
         devops: skillsData.filter((s) => s.category === "devops").length,
         ide: skillsData.filter((s) => s.category === "ide").length,
         tools: skillsData.filter((s) => s.category === "tools").length,
+        softskills: skillsData.filter((s) => s.category === "softskills").length,
         others: skillsData.filter((s) => s.category === "others").length,
     };
     return { total, byLevel, byCategory };

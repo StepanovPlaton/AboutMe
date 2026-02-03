@@ -7,7 +7,7 @@ export interface Project {
     title: string;
     description: string;
     image: string;
-    category: "proud" | "older" | "other";
+    category: "actual" | "history" | "other";
     techStack: string[];
     status: "completed" | "in-progress" | "planned";
     demoUrl?: string;

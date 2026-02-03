@@ -23,7 +23,7 @@ site:
             src: "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
             family: "Zen Maru Gothic"
     themeColor:
-        hue: 55
+        hue: 90
         fixed: true
     defaultTheme: "dark"
     wallpaper:
@@ -180,7 +180,7 @@ musicPlayer:
                 cover: "assets/images/reflecting.jpg"
                 url: "assets/music/reflecting.mp3"
                 duration: 90
-    autoplay: true
+    autoplay: false
 
 pio:
     enable: false

@@ -38,7 +38,7 @@ collections:
             -   { label: "Title", name: "title", widget: "string" }
             -   { label: "Description", name: "description", widget: "text" }
             -   { label: "Image", name: "image", widget: "image", required: false }
-            -   { label: "Category", name: "category", widget: "select", options: ["proud","older","other"] }
+            -   { label: "Category", name: "category", widget: "select", options: ["actual","history","other"] }
             -   { label: "Tech Stack", name: "techStack", widget: "list", default: [] }
             -   { label: "Status", name: "status", widget: "select", options: ["completed","in-progress","planned"] }
             -   { label: "Live Demo", name: "liveDemo", widget: "string", required: false }
@@ -58,7 +58,7 @@ collections:
             -   { label: "Name", name: "name", widget: "string" }
             -   { label: "Description", name: "description", widget: "text" }
             -   { label: "Icon", name: "icon", widget: "string" }
-            -   { label: "Category", name: "category", widget: "select", options: ["ai","frontend","backend","native","devops","ide","tools","others"] }
+            -   { label: "Category", name: "category", widget: "select", options: ["ai","frontend","backend","native","devops","ide","tools","softskills","others"] }
             -   { label: "Level", name: "level", widget: "select", options: ["beginner","intermediate","advanced","expert"] }
             -   label: "Experience"
                 name: "experience"
