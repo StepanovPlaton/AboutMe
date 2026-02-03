@@ -1,0 +1,13 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/WifiMicroMusicStation",
+  "featured": false,
+  "startDate": "2020-09-05T08:00:00.000+04:00",
+  "techStack": [
+    "MicroPython"
+  ],
+  "status": "completed",
+  "title": "WifiMicroMusicStation",
+  "tags": [],
+  "description": "Устройство в корпусе ретро-радио для автономного проигрывания музыки на ESP8266 и DFPlayerMini",
+  "category": "history"
+}
