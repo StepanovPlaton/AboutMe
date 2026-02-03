@@ -3,7 +3,13 @@
   "featured": false,
   "liveDemo": "https://jelly-belly-wiki.vercel.app",
   "startDate": "2024-07-08T08:00:00.000+04:00",
-  "techStack": [],
+  "techStack": [
+    "TypeScript",
+    "React 18",
+    "Next.js 14 (App Router)",
+    "Tailwind CSS",
+    "Zod"
+  ],
   "status": "completed",
   "title": "JellyBelly Wiki",
   "tags": [],
