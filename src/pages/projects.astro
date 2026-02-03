@@ -44,12 +44,10 @@ const projectsByCategory = categories.reduce(
 // 获取分类文本的国际化翻译
 const getCategoryText = (category: string) => {
     switch (category) {
-        case "web":
-            return i18n(I18nKey.projectsWeb);
-        case "mobile":
-            return i18n(I18nKey.projectsMobile);
-        case "desktop":
-            return i18n(I18nKey.projectsDesktop);
+        case "proud":
+            return i18n(I18nKey.projectsProud);
+        case "older":
+            return i18n(I18nKey.projectsOlder);
         case "other":
             return i18n(I18nKey.projectsOther);
         case UNCATEGORIZED:

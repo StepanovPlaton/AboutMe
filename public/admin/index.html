@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+    <script>
+        // КРИТИЧНО: Переопределяем window.location.origin ПЕРЕД загрузкой DecapCMS
+        // Это гарантирует, что DecapCMS будет использовать правильный URL без порта 8091
+        (function() {
+            const correctOrigin = 'https://stepanovplaton.ru';
+            const originalLocation = window.location;
+            
+            // Сохраняем оригинальные значения
+            const originalOrigin = originalLocation.origin;
+            const originalHref = originalLocation.href;
+            
+            // Переопределяем window.location.origin
+            try {
+                Object.defineProperty(window.location, 'origin', {
+                    get: function() {
+                        // Если origin содержит порт 8091, возвращаем правильный origin
+                        if (originalOrigin.includes(':8091')) {
+                            return correctOrigin;
+                        }
+                        // Иначе возвращаем оригинальный origin, но без порта если это стандартный порт
+                        const origin = originalOrigin;
+                        if (origin.startsWith('http://') && origin.endsWith(':8091')) {
+                            return origin.replace(':8091', '');
+                        }
+                        if (origin.startsWith('https://') && origin.endsWith(':8091')) {
+                            return origin.replace(':8091', '');
+                        }
+                        return origin;
+                    },
+                    configurable: true,
+                    enumerable: true
+                });
+                
+                // Также переопределяем host для полной совместимости
+                Object.defineProperty(window.location, 'host', {
+                    get: function() {
+                        const host = originalLocation.host;
+                        if (host.includes(':8091')) {
+                            return host.replace(':8091', '');
+                        }
+                        return host;
+                    },
+                    configurable: true,
+                    enumerable: true
+                });
+                
+                // Переопределяем hostname
+                Object.defineProperty(window.location, 'hostname', {
+                    get: function() {
+                        return 'stepanovplaton.ru';
+                    },
+                    configurable: true,
+                    enumerable: true
+                });
+                
+                // Переопределяем port
+                Object.defineProperty(window.location, 'port', {
+                    get: function() {
+                        return '';
+                    },
+                    configurable: true,
+                    enumerable: true
+                });
+                
+                // Переопределяем protocol
+                Object.defineProperty(window.location, 'protocol', {
+                    get: function() {
+                        return 'https:';
+                    },
+                    configurable: true,
+                    enumerable: true
+                });
+                
+                console.log('[DecapCMS Fix] Переопределен window.location.origin:', originalOrigin, '→', correctOrigin);
+            } catch (e) {
+                console.error('[DecapCMS Fix] Ошибка при переопределении location:', e);
+            }
+        })();
+    </script>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+    <script>
+        // Проверка после загрузки
+        window.addEventListener('load', function() {
+            console.log('[DecapCMS Fix] Загружено. Текущий origin:', window.location.origin);
+            console.log('[DecapCMS Fix] Текущий host:', window.location.host);
+        });
+    </script>
+</body>
+</html>

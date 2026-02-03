@@ -6,9 +6,8 @@ backend:
     base_url: https://stepanovplaton.ru
     auth_endpoint: oauth
 
-# Явно указываем site_url для правильного формирования OAuth callback URL
-# Это предотвращает добавление порта 8091 к OAuth ссылкам
 site_url: https://stepanovplaton.ru
+
 media_folder: "public/images"
 public_folder: "/images"
 collections:
@@ -39,7 +38,7 @@ collections:
             -   { label: "Title", name: "title", widget: "string" }
             -   { label: "Description", name: "description", widget: "text" }
             -   { label: "Image", name: "image", widget: "image", required: false }
-            -   { label: "Category", name: "category", widget: "select", options: ["library","ai","software","website","game"] }
+            -   { label: "Category", name: "category", widget: "select", options: ["proud","older","other"] }
             -   { label: "Tech Stack", name: "techStack", widget: "list", default: [] }
             -   { label: "Status", name: "status", widget: "select", options: ["completed","in-progress","planned"] }
             -   { label: "Live Demo", name: "liveDemo", widget: "string", required: false }
@@ -59,7 +58,7 @@ collections:
             -   { label: "Name", name: "name", widget: "string" }
             -   { label: "Description", name: "description", widget: "text" }
             -   { label: "Icon", name: "icon", widget: "string" }
-            -   { label: "Category", name: "category", widget: "select", options: ["ai","backend","client","frontend","database","engines","tools","others"] }
+            -   { label: "Category", name: "category", widget: "select", options: ["ai","frontend","backend","native","devops","ide","tools","others"] }
             -   { label: "Level", name: "level", widget: "select", options: ["beginner","intermediate","advanced","expert"] }
             -   label: "Experience"
                 name: "experience"

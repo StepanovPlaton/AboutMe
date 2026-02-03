@@ -7,7 +7,7 @@ export interface Skill {
     name: string;
     description: string;
     icon: string; // Iconify icon name
-    category: "ai" | "backend" | "client" | "frontend" | "database" | "engines" | "tools" | "others";
+    category: "ai" | "frontend" | "backend" | "native" | "devops" | "ide" | "tools" | "others";
     level: "beginner" | "intermediate" | "advanced" | "expert";
     experience: {
         years: number;
@@ -35,12 +35,12 @@ export const getSkillStats = () => {
     };
     const byCategory = {
         ai: skillsData.filter((s) => s.category === "ai").length,
-        backend: skillsData.filter((s) => s.category === "backend").length,
-        client: skillsData.filter((s) => s.category === "client").length,
         frontend: skillsData.filter((s) => s.category === "frontend").length,
-        database: skillsData.filter((s) => s.category === "database").length,
+        backend: skillsData.filter((s) => s.category === "backend").length,
+        native: skillsData.filter((s) => s.category === "native").length,
+        devops: skillsData.filter((s) => s.category === "devops").length,
+        ide: skillsData.filter((s) => s.category === "ide").length,
         tools: skillsData.filter((s) => s.category === "tools").length,
-        engines: skillsData.filter((s) => s.category === "engines").length,
         others: skillsData.filter((s) => s.category === "others").length,
     };
     return { total, byLevel, byCategory };
