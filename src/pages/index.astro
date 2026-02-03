@@ -1,0 +1,113 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { type NavbarLink } from "@/types/config";
+import { navbarConfig } from "@/config";
+import { LinkPresets } from "@constants/link-presets";
+import { url } from "@utils/url";
+import GridLayout from "@layouts/grid.astro";
+import { siteConfig } from "@/config";
+
+
+// Получаем все ссылки из navbar, включая основные и с подразделами
+const allLinks: NavbarLink[] = [];
+
+navbarConfig.links.forEach(link => {
+    if (typeof link === "number") {
+        // Это LinkPreset
+        const preset = LinkPresets[link];
+        if (preset) {
+            allLinks.push(preset);
+        }
+    } else {
+        // Это NavbarLink
+        allLinks.push(link);
+    }
+});
+
+// Добавляем ссылку на новости/ленту постов
+const newsLink: NavbarLink = {
+    name: "Новости",
+    url: "/news/",
+    icon: "material-symbols:article",
+    description: "Лента постов и статей",
+};
+
+// Вставляем ссылку на новости в начало списка
+allLinks.unshift(newsLink);
+
+const pageTitle = siteConfig.title;
+const pageDescription = siteConfig.subtitle || "";
+---
+
+<GridLayout title={pageTitle} description={pageDescription}>
+    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <!-- Заголовок -->
+            <header class="mb-8">
+                <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                    {pageTitle}
+                </h1>
+                {pageDescription && (
+                    <p class="text-neutral-600 dark:text-neutral-400">
+                        {pageDescription}
+                    </p>
+                )}
+            </header>
+            <!-- Сетка ссылок -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {allLinks.map(link => {
+                    // Для ссылок с подразделами показываем саму ссылку
+                    const hasChildren = link.children && link.children.length > 0;
+                    const linkUrl = hasChildren ? link.url : (link.external ? link.url : url(link.url));
+                    
+                    return (
+                        <a
+                            href={linkUrl}
+                            target={link.external ? "_blank" : null}
+                            class="menu-card group flex flex-col items-center justify-center p-8 rounded-xl border transition-all duration-300"
+                        >
+                            <div class="icon-wrapper w-16 h-16 flex items-center justify-center rounded-full mb-4 transition-all duration-300">
+                                {link.icon && <Icon name={link.icon} class="text-3xl" />}
+                            </div>
+                            <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-(--primary) transition-colors duration-300 text-center">
+                                {link.name}
+                            </h2>
+                            {link.description && (
+                                <p class="text-sm text-neutral-600 dark:text-neutral-400 text-center mt-2 line-clamp-2">
+                                    {link.description}
+                                </p>
+                            )}
+                        </a>
+                    );
+                })}
+            </div>
+        </div>
+    </div>
+</GridLayout>
+
+<style>
+    .menu-card {
+        cursor: pointer;
+        background-color: none;
+        border-color: var(--line-divider);
+    }
+
+    .icon-wrapper {
+        background-color: color-mix(in oklch, var(--primary), transparent 85%);
+        color: var(--primary);
+    }
+
+    .menu-card:hover {
+        background-color: color-mix(in oklch, var(--primary), transparent 95%);
+        border-color: var(--primary);
+        box-shadow: 0 0 20px color-mix(in oklch, var(--primary), transparent 80%);
+        translate: 0 -4px;
+    }
+
+    .menu-card:hover .icon-wrapper {
+        background-color: var(--primary);
+        color: white;
+        box-shadow: 0 0 15px color-mix(in oklch, var(--primary), transparent 50%);
+    }
+</style>
