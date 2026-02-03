@@ -1,0 +1,24 @@
+{
+  "sourceCode": "https://git.stepanovplaton.ru/StepanovPlaton/torrent_frontend",
+  "featured": false,
+  "startDate": "2024-05-07T08:00:00.000+04:00",
+  "techStack": [
+    "TypeScript",
+    "React 18",
+    "Next.js 14 (App Router)",
+    "Zod",
+    "SWR",
+    "Tailwind CSS",
+    "Python",
+    "FastAPI",
+    "SQLAlchemy",
+    "ORM",
+    "Typer",
+    "asyncio"
+  ],
+  "status": "completed",
+  "title": ".Torrent",
+  "tags": [],
+  "description": "SSR Web-приложение для обмена .torrent файлами",
+  "category": "proud"
+}
