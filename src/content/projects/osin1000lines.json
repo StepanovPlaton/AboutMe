@@ -1,0 +1,13 @@
+{
+  "sourceCode": "https://git.stepanovplaton.ru/StepanovPlaton/OSin1000Lines",
+  "featured": false,
+  "startDate": "2026-02-03T08:00:00.000+04:00",
+  "techStack": [
+    "C"
+  ],
+  "status": "completed",
+  "title": "OSin1000Lines",
+  "tags": [],
+  "description": "Операционная система для QEMU RISC-V в 1000 строк кода на С",
+  "category": "actual"
+}
