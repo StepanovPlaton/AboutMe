@@ -1,0 +1,14 @@
+{
+  "color": "#41b883",
+  "level": "intermediate",
+  "experience": {
+    "years": 1,
+    "months": 2
+  },
+  "name": "VueJS",
+  "icon": "logos:vue",
+  "certifications": [],
+  "projects": [],
+  "description": "Прогрессивный JavaScript-фреймворк для создания пользовательских интерфейсов",
+  "category": "frontend"
+}
