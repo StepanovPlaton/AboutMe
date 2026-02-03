@@ -1,0 +1,14 @@
+{
+  "color": "#e44d26",
+  "level": "expert",
+  "experience": {
+    "years": 6,
+    "months": 7
+  },
+  "name": "HTML5",
+  "icon": "logos:html-5",
+  "certifications": [],
+  "projects": [],
+  "description": "Язык разметки гипертекста",
+  "category": "frontend"
+}
