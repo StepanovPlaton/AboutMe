@@ -4,14 +4,14 @@
   "startDate": "2025-05-16T08:00:00.000+04:00",
   "techStack": [
     "TypeScript",
-    "React 19",
-    "Next.js 15 (App Router)",
-    "Nest 11",
+    "React",
+    "Next.js",
+    "Nest",
     "TypeORM",
     "Tailwind CSS",
     "Yup",
     "SWR",
-    "Swagger UI Express",
+    "Swagger",
     "PostgreSQL"
   ],
   "status": "completed",
