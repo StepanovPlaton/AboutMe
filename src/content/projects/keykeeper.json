@@ -1,0 +1,14 @@
+{
+  "featured": false,
+  "liveDemo": "https://stepanovplaton.wixsite.com/keykeeper",
+  "startDate": "2020-07-11T08:00:00.000+04:00",
+  "techStack": [
+    "Arduino",
+    "C++"
+  ],
+  "status": "completed",
+  "title": "KeyKeeper",
+  "tags": [],
+  "description": "Устройство для хранения паролей в форм-факторе USB-флешки",
+  "category": "history"
+}
