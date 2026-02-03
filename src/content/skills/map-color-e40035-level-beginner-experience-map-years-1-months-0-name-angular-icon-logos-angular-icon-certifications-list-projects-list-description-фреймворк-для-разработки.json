@@ -1,0 +1,14 @@
+{
+  "color": "#e40035",
+  "level": "beginner",
+  "experience": {
+    "years": 1,
+    "months": 0
+  },
+  "name": "Angular",
+  "icon": "logos:angular-icon",
+  "certifications": [],
+  "projects": [],
+  "description": "Фреймворк для разработки веб-приложений, созданный и поддерживаемый Google",
+  "category": "frontend"
+}

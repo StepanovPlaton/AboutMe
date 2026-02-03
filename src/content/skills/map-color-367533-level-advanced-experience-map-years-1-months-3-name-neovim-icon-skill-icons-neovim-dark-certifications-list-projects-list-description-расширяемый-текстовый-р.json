@@ -1,0 +1,14 @@
+{
+  "color": "#367533",
+  "level": "advanced",
+  "experience": {
+    "years": 1,
+    "months": 3
+  },
+  "name": "Neovim",
+  "icon": "skill-icons:neovim-dark",
+  "certifications": [],
+  "projects": [],
+  "description": "Расширяемый текстовый редактор, форк оригинального Vim",
+  "category": "ide"
+}

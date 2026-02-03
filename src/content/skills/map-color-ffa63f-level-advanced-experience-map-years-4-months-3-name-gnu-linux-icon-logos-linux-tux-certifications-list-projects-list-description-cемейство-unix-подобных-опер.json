@@ -1,0 +1,14 @@
+{
+  "color": "#ffa63f",
+  "level": "advanced",
+  "experience": {
+    "years": 4,
+    "months": 3
+  },
+  "name": "GNU/Linux",
+  "icon": "logos:linux-tux",
+  "certifications": [],
+  "projects": [],
+  "description": "Cемейство Unix-подобных операционных систем на базе ядра Linux",
+  "category": "devops"
+}

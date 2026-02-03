@@ -1,0 +1,14 @@
+{
+  "color": "#fff",
+  "level": "advanced",
+  "experience": {
+    "years": 1,
+    "months": 2
+  },
+  "name": "Next.js",
+  "icon": "logos:nextjs-icon",
+  "certifications": [],
+  "projects": [],
+  "description": "Фреймворк для разработки веб-приложений на базе React",
+  "category": "frontend"
+}

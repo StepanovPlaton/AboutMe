@@ -1,12 +1,12 @@
 {
   "sourceCode": "https://git.stepanovplaton.ru/StepanovPlaton/jelly_belly_wiki",
-  "featured": false,
+  "featured": true,
   "liveDemo": "https://jelly-belly-wiki.vercel.app",
   "startDate": "2024-07-08T08:00:00.000+04:00",
   "techStack": [
     "TypeScript",
-    "React 18",
-    "Next.js 14 (App Router)",
+    "React",
+    "Next.js",
     "Tailwind CSS",
     "Zod"
   ],

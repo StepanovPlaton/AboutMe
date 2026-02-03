@@ -1,0 +1,14 @@
+{
+  "color": "#3178c6",
+  "level": "expert",
+  "experience": {
+    "years": 4,
+    "months": 1
+  },
+  "name": "TypeScript",
+  "icon": "logos:typescript-icon",
+  "certifications": [],
+  "projects": [],
+  "description": "Надмножество JavaScript, добавляющее статическую типизацию и возможности объектно-ориентированного программирования",
+  "category": "frontend"
+}

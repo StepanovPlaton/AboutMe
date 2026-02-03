@@ -5,14 +5,11 @@
   "techStack": [
     "Kotlin",
     "Jetpack Compose",
-    "Material Design 3",
-    "Room",
-    "Glance",
-    "OkHttp"
+    "Material Design"
   ],
   "status": "completed",
   "title": "Расписание СамГУ",
   "tags": [],
   "description": "Android-приложение, позволяющее студентам СамГУ просматривать своё учебное расписание",
-  "category": "actual"
+  "category": "history"
 }

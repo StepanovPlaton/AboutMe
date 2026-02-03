@@ -1,0 +1,14 @@
+{
+  "color": "#264de4",
+  "level": "expert",
+  "experience": {
+    "years": 6,
+    "months": 7
+  },
+  "name": "CSS3",
+  "icon": "logos:css-3",
+  "certifications": [],
+  "projects": [],
+  "description": "Язык описания внешнего вида документа, написанного с использованием языка разметки",
+  "category": "frontend"
+}

@@ -1,0 +1,14 @@
+{
+  "color": "#de4c36",
+  "level": "expert",
+  "experience": {
+    "years": 6,
+    "months": 2
+  },
+  "name": "Git",
+  "icon": "logos:git-icon",
+  "certifications": [],
+  "projects": [],
+  "description": "Распределённая система контроля версий",
+  "category": "tools"
+}

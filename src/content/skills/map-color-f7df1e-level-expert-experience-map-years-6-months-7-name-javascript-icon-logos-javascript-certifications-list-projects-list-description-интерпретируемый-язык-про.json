@@ -1,0 +1,14 @@
+{
+  "color": "#f7df1e",
+  "level": "expert",
+  "experience": {
+    "years": 6,
+    "months": 7
+  },
+  "name": "JavaScript",
+  "icon": "logos:javascript",
+  "certifications": [],
+  "projects": [],
+  "description": "Интерпретируемый язык программирования высокого уровня, созданный для веб-разработки",
+  "category": "frontend"
+}

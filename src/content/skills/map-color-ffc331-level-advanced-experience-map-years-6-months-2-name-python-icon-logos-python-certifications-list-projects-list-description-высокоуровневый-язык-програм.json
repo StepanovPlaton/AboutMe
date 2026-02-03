@@ -1,0 +1,14 @@
+{
+  "color": "#ffc331",
+  "level": "advanced",
+  "experience": {
+    "years": 6,
+    "months": 2
+  },
+  "name": "Python",
+  "icon": "logos:python",
+  "certifications": [],
+  "projects": [],
+  "description": "Высокоуровневый язык программирования общего назначения",
+  "category": "backend"
+}

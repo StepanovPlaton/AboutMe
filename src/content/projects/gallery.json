@@ -1,0 +1,15 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/Gallery",
+  "featured": false,
+  "startDate": "2022-10-09T08:00:00.000+04:00",
+  "techStack": [
+    "Angular",
+    "RxJS",
+    "SCSS"
+  ],
+  "status": "completed",
+  "title": "Gallery",
+  "tags": [],
+  "description": "Сайт-портфолио, галерея, разделённая на разделы, с системой тегов и простой авторизацией",
+  "category": "history"
+}

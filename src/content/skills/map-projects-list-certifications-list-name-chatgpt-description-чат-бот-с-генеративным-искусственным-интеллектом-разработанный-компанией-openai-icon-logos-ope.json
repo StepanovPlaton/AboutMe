@@ -1,0 +1,13 @@
+{
+  "projects": [],
+  "certifications": [],
+  "name": "ChatGPT",
+  "description": "Чат-бот с генеративным искусственным интеллектом, разработанный компанией OpenAI",
+  "icon": "logos:openai-icon",
+  "category": "ai",
+  "level": "advanced",
+  "experience": {
+    "years": 1,
+    "months": 0
+  }
+}

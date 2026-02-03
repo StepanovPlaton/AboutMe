@@ -1,0 +1,14 @@
+{
+  "color": "#2396ed",
+  "level": "intermediate",
+  "experience": {
+    "years": 2,
+    "months": 6
+  },
+  "name": "Docker",
+  "icon": "logos:docker-icon",
+  "certifications": [],
+  "projects": [],
+  "description": "Платформа с открытым исходным кодом для автоматизации разработки, доставки и развёртывания приложений",
+  "category": "devops"
+}

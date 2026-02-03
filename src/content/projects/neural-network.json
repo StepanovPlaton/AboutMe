@@ -3,7 +3,7 @@
   "featured": false,
   "startDate": "2025-10-26T08:00:00.000+04:00",
   "techStack": [
-    "С++23",
+    "С++",
     "OpenCL",
     "Python"
   ],
