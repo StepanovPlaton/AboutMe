@@ -1,0 +1,14 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/NeyroGamer",
+  "featured": false,
+  "startDate": "2020-03-06T08:00:00.000+04:00",
+  "techStack": [
+    "Python",
+    "NumPy"
+  ],
+  "status": "completed",
+  "title": "NeyroGamer",
+  "tags": [],
+  "description": "Генетический алгоритм, обучающий нейронные сети играть в гонки. Без использования ML библиотек",
+  "category": "history"
+}
