@@ -1,0 +1,18 @@
+{
+  "sourceCode": "https://git.stepanovplaton.ru/StepanovPlaton/SSAU_Schedule",
+  "featured": false,
+  "startDate": "2024-09-08T08:00:00.000+04:00",
+  "techStack": [
+    "Kotlin",
+    "Jetpack Compose",
+    "Material Design 3",
+    "Room",
+    "Glance",
+    "OkHttp"
+  ],
+  "status": "completed",
+  "title": "Расписание СамГУ",
+  "tags": [],
+  "description": "Android-приложение, позволяющее студентам СамГУ просматривать своё учебное расписание",
+  "category": "proud"
+}
