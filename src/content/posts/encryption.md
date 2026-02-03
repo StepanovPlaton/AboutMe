@@ -1,19 +1,18 @@
 ---
-title: Encryption Example
-published: 2020-02-02
-description: 'Password: 123456'
+draft: false
 encrypted: true
+title: Encryption Example22
+published: 2020-02-02
 pinned: false
+description: "Password: 123456"
+tags:
+  - Encryption
 password: "123456"
-tags: [Encryption]
 category: Examples
 ---
-
-
-# Password Protected Post
+# Password Protected Post22
 
 This is an example of a password-protected post in the Twilight theme. The content below is encrypted using AES and can only be viewed by entering the correct password.
-
 
 ## Frontmatter Example
 
@@ -27,9 +26,8 @@ password: "your-password"
 ---
 ```
 
-- `encrypted` - Whether encryption is enabled for the post.
-- `password` - The password required to unlock the content.
-
+* `encrypted` - Whether encryption is enabled for the post.
+* `password` - The password required to unlock the content.
 
 ## Note
 
