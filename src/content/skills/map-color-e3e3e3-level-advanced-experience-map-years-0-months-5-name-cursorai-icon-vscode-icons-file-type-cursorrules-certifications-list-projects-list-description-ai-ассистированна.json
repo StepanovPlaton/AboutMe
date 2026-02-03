@@ -1,0 +1,14 @@
+{
+  "color": "#e3e3e3",
+  "level": "advanced",
+  "experience": {
+    "years": 0,
+    "months": 5
+  },
+  "name": "CursorAI",
+  "icon": "vscode-icons:file-type-cursorrules",
+  "certifications": [],
+  "projects": [],
+  "description": "AI-ассистированная интегрированная среда разработки (IDE), построенная на основе Visual Studio Code",
+  "category": "ai"
+}
