@@ -1,14 +1,15 @@
 {
+  "sourceCode": "https://git.stepanovplaton.ru/StepanovPlaton/NeuralNetwork",
+  "featured": false,
+  "startDate": "2025-10-26T08:00:00.000+04:00",
   "techStack": [
     "С++23",
     "OpenCL",
     "Python"
   ],
-  "featured": false,
-  "tags": [],
-  "title": "Neural Network++",
-  "description": "Движок для создания нейронных сетей написанный на С++",
-  "category": "proud",
   "status": "completed",
-  "startDate": "2025-10-26T08:00:00.000+04:00"
+  "title": "Neural Network++",
+  "tags": [],
+  "description": "Движок для создания нейронных сетей написанный на С++",
+  "category": "proud"
 }
