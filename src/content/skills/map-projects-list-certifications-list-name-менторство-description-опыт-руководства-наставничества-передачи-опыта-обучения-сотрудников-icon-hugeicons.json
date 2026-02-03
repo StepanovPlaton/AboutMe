@@ -1,0 +1,13 @@
+{
+  "projects": [],
+  "certifications": [],
+  "name": "Менторство",
+  "description": "Опыт руководства, наставничества, передачи опыта, обучения сотрудников",
+  "icon": "hugeicons:mentoring",
+  "category": "softskills",
+  "level": "beginner",
+  "experience": {
+    "years": 0,
+    "months": 5
+  }
+}
