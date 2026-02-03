@@ -1,18 +1,19 @@
-# About This Site
+# Об этом сайте
 
-Twilight is a CMS integrated static blog template built with [Astro](https://astro.build) framework.
+Добро пожаловать на сайт Степанова Платона. Тут много информации обо мне, моих проектах, навыках, увлечениях, мои новости. Я хотел собрать всё это в одном месте, чтобы удобно делиться своим опытом и представляться в интернете. 
+**Пишите, буду рад новым знакомым!**
 
+---
+
+## Достойны упоминания
+Если вам понравился этот сайт, вы так же можете [посмотреть проекты других людей, которые я считаю достойными упоминания](../worth-mentioning/)
+
+---
+
+## Создать свой сайт
+Если вам понравился этот сайт и вы хотите создать что-то подобное для себя, то эти репозитории вам помогут:
+
+**Шаблон для Astro Twilight который лежит в основе моего сайта**
 ::github{repo="Spr-Aachen/Twilight"}
-
-
-## Milestones
-
-- Integrated content management system in [#1](https://github.com/Spr-Aachen/Twilight/pull/1)
-- Seamless wallpaper mode switching in [#2](https://github.com/Spr-Aachen/Twilight/pull/2)
-- Dynamic content container response in [#47](https://github.com/Spr-Aachen/Twilight/pull/47)
-- Seamless page component loading in [#48](https://github.com/Spr-Aachen/Twilight/pull/48)
-- Smart music playback handling in [#49](https://github.com/Spr-Aachen/Twilight/pull/49)
-- Infinite-level navigation system in [#50](https://github.com/Spr-Aachen/Twilight/pull/50)
-- Comprehensive statistics dashboard in [#51](https://github.com/Spr-Aachen/Twilight/pull/51)
-- Low-barrier configuration scheme in [#58](https://github.com/Spr-Aachen/Twilight/pull/58)
-- Dynamic breakpoint handling in [#68](https://github.com/Spr-Aachen/Twilight/pull/68)
+**Исходный код моего сайта**
+::github{repo="StepanovPlaton/AboutMe"}

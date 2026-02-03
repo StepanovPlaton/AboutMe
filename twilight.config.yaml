@@ -40,7 +40,7 @@ site:
             kenBurns: true
         banner:
             homeText:
-                enable: false
+                enable: true
                 title: "Степанов Платон"
                 subtitle:
                     - "Программный инженер, разработчик"
@@ -95,15 +95,11 @@ navbar:
         -   "Projects"
         -   "Skills"
         -   "Timeline"
-        -   name: "Разное"
-            url: "/exhibition/"
-            icon: "material-symbols:check-box"
-            description: ""
-            children:
-                - "Diary"
-                - "Albums"
-                - "Friends"
-        - "About"
+        # -   "Diary"
+        -   "Albums"
+        # -   "Friends"
+        -   "WorthMentioning"
+        -   "About"
 
 sidebar:
     components:
@@ -131,14 +127,17 @@ sidebar:
 profile:
     avatar: "/assets/images/avatar.jpg"
     name: "Степанов Платон"
-    bio: ""
+    bio: "Приятно познакомиться!"
     links:
-        -   name: "GitHub"
-            icon: "fa6-brands:github"
+        -   name: "Git"
+            icon: "fa6-brands:git-alt"
             url: "https://git.stepanovplaton.ru"
         -   name: "Telegram"
             icon: "fa6-brands:telegram"
             url: "https://t.me/StepanovPlaton"
+        -   name: "Email"
+            icon: "material-symbols:mail-outline"
+            url: "mailto:mail2platon@yandex.ru"
 
 announcement:
     enable: false

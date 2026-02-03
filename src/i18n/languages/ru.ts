@@ -111,8 +111,8 @@ export const ru: Translation = {
     [Key.skillLevelAdvanced]: "Продвинутый",
     [Key.skillLevelExpert]: "Эксперт",
     [Key.skillExperience]: "Опыт",
-    [Key.skillYears]: " г.",
-    [Key.skillMonths]: " мес.",
+    [Key.skillYears]: " г",
+    [Key.skillMonths]: " мес",
     [Key.skillsTotal]: "Всего навыков",
     [Key.skillsExpert]: "Экспертный уровень",
     [Key.skillsAdvanced]: "Продвинутый",
@@ -163,8 +163,8 @@ export const ru: Translation = {
     [Key.diaryDaysAgo]: "дней назад",
 
     // Страница альбомов
-    [Key.albums]: "Портфолио", //"Альбомы",
-    [Key.albumsSubtitle]: "Записывайте прекрасные моменты жизни",
+    [Key.albums]: "Медиа", //"Альбомы",
+    [Key.albumsSubtitle]: "Скриншоты моих работ и многое другое",
     [Key.albumsEmpty]: "Нет содержимого",
     [Key.albumsEmptyDesc]: "Альбомы ещё не созданы. Добавьте прекрасные воспоминания!",
     [Key.albumsBackToList]: "Вернуться к альбомам",
@@ -190,6 +190,10 @@ export const ru: Translation = {
 
     // Страница друзей
     [Key.friends]: "Друзья",
+
+    // Страница проектов достойных упоминания
+    [Key.worthMentioning]: "Посмотрите также",
+    [Key.worthMentioningSubtitle]: "Проекты достойные упоминания",
 
     // Страница RSS
     [Key.rss]: "RSS лента",

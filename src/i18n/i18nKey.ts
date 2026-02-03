@@ -188,6 +188,10 @@ enum I18nKey {
     // 友链页面
     friends = "friends",
 
+    // 值得提及的 проекты
+    worthMentioning = "worthMentioning",
+    worthMentioningSubtitle = "worthMentioningSubtitle",
+
     // RSS页面
     rss = "rss",
     rssDescription = "rssDescription",

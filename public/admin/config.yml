@@ -155,6 +155,12 @@ collections:
             -   { label: "Site URL", name: "siteurl", widget: "string" }
             -   { label: "Tags", name: "tags", widget: "list", required: false, default: [] }
 
+    -   name: "worth-mentioning"
+        label: "Worth Mentioning"
+        file: "src/content/worth-mentioning.md"
+        fields:
+            -   { label: "Body", name: "body", widget: "markdown" }
+
 
 editor:
     preview: true

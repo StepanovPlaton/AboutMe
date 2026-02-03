@@ -9,9 +9,10 @@ interface Props {
     page: Page;
     class?: string;
     style?: string;
+    basePath?: string; // Базовый путь для генерации URL (например, "/news" для главной страницы)
 }
 
-const { page, style } = Astro.props;
+const { page, style, basePath } = Astro.props;
 
 const HIDDEN = -1;
 
@@ -48,7 +49,14 @@ if (r === page.lastPage - 2) pages.push(page.lastPage - 1);
 if (r < page.lastPage) pages.push(page.lastPage);
 
 const getPageUrl = (p: number) => {
-    if (p === 1) return "/";
+    if (p === 1) {
+        // Первая страница всегда на корне
+        return "/";
+    }
+    // Если указан basePath, используем его для всех страниц кроме первой
+    if (basePath) {
+        return `${basePath}/${p}/`;
+    }
     return `/${p}/`;
 };
 ---

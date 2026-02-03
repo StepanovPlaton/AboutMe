@@ -27,10 +27,12 @@ const stats = getProjectStats();
 const featuredProjects = getFeaturedProjects();
 const allTechStack = getAllTechStack();
 
-// 获取所有分类
-const categories = [
-    ...new Set(projectsData.map((project) => project.category)),
-];
+// 定义分类顺序
+const categoryOrder = ["actual", "history", "other"];
+
+// 获取所有分类并按指定顺序排序
+const allCategories = [...new Set(projectsData.map((project) => project.category))];
+const categories = categoryOrder.filter(cat => allCategories.includes(cat));
 
 // 按分类获取项目
 const projectsByCategory = categories.reduce(

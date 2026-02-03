@@ -7,7 +7,10 @@ import { LinkPresets } from "@constants/link-presets";
 import { url } from "@utils/url";
 import GridLayout from "@layouts/grid.astro";
 import { siteConfig } from "@/config";
-
+import PostPage from "@components/postPage.astro";
+import { PAGE_SIZE } from "@constants/constants";
+import { getSortedPosts } from "@utils/content";
+import Pagination from "@components/pagination.astro";
 
 // Получаем все ссылки из navbar, включая основные и с подразделами
 const allLinks: NavbarLink[] = [];
@@ -25,23 +28,34 @@ navbarConfig.links.forEach(link => {
     }
 });
 
-// Добавляем ссылку на новости/ленту постов
-const newsLink: NavbarLink = {
-    name: "Новости",
-    url: "/news/",
-    icon: "material-symbols:article",
-    description: "Лента постов и статей",
-};
-
-// Вставляем ссылку на новости в начало списка
-allLinks.unshift(newsLink);
-
 const pageTitle = siteConfig.title;
 const pageDescription = siteConfig.subtitle || "";
+
+const allBlogPosts = await getSortedPosts();
+const firstPagePosts = allBlogPosts.slice(0, PAGE_SIZE);
+const totalPages = Math.ceil(allBlogPosts.length / PAGE_SIZE);
+
+const page = {
+    currentPage: 1,
+    lastPage: totalPages,
+    size: PAGE_SIZE,
+    total: allBlogPosts.length,
+    data: firstPagePosts.map((post, index) => ({
+        ...post,
+        index: index + 1,
+    })),
+    url: {
+        current: "/",
+        prev: undefined,
+        next: totalPages > 1 ? url("/news/2/") : undefined,
+    },
+};
+const len = page.data.length;
+
 ---
 
 <GridLayout title={pageTitle} description={pageDescription}>
-    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32 mb-3">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <!-- Заголовок -->
             <header class="mb-8">
@@ -84,6 +98,10 @@ const pageDescription = siteConfig.subtitle || "";
             </div>
         </div>
     </div>
+    <PostPage page={page}></PostPage>
+    {totalPages > 1 && (
+        <Pagination class="mx-auto onload-animation-up" page={page} style={`animation-delay: ${(len)*50}ms`} basePath="/news"></Pagination>
+    )}
 </GridLayout>
 
 <style>

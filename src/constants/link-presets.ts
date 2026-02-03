@@ -64,4 +64,10 @@ export const LinkPresets: { [key in LinkPreset]: NavbarLink } = {
         icon: "material-symbols:info",
         description: i18n(I18nKey.about),
     },
+    [LinkPreset.WorthMentioning]: {
+        name: i18n(I18nKey.worthMentioning),
+        url: "/worth-mentioning/",
+        icon: "material-symbols:star",
+        description: i18n(I18nKey.worthMentioningSubtitle),
+    },
 };
