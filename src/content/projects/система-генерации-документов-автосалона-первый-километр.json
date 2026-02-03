@@ -1,0 +1,23 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/FirstKilometer",
+  "endDate": "",
+  "featured": false,
+  "startDate": "2005-08-10T08:00:00.000+05:00",
+  "techStack": [
+    "TypeScript",
+    "React 19",
+    "Next.js 15 (App Router)",
+    "Ant Design 5",
+    "SWR",
+    "Zod",
+    "Python 3.12",
+    "Django 5.2.4",
+    "Paddle 3.1",
+    "RapidFuzz"
+  ],
+  "status": "completed",
+  "title": "Система генерации документов автосалона \"Первый километр\"",
+  "tags": [],
+  "description": "Автоматическая генерация договоров из отсканированных документов с помощью конвейера нейронных сетей",
+  "category": "proud"
+}
