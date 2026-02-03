@@ -4,7 +4,11 @@ backend:
     branch: main
     site_domain: stepanovplaton.ru
     base_url: https://stepanovplaton.ru
-    auth_endpoint: oauth 
+    auth_endpoint: oauth
+
+# Явно указываем site_url для правильного формирования OAuth callback URL
+# Это предотвращает добавление порта 8091 к OAuth ссылкам
+site_url: https://stepanovplaton.ru
 media_folder: "public/images"
 public_folder: "/images"
 collections:
