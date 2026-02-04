@@ -1,11 +1,15 @@
 {
   "tags": [],
-  "layout": "grid",
+  "layout": "masonry",
   "columns": 2,
   "photos": [
     {
       "tags": [],
       "src": "/images/photo_2026-02-04_16-47-12.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/photo_2026-02-04_16-50-23.jpg"
     },
     {
       "tags": [],
