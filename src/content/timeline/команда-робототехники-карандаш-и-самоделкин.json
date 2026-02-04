@@ -20,6 +20,16 @@
       "type": "other",
       "url": "https://karandashsamodelkin.blogspot.com",
       "name": "Блог команды \"Карандаш и Самоделкин\""
+    },
+    {
+      "type": "project",
+      "name": "Проект \"NeyroGamer\"",
+      "url": "https://github.com/StepanovPlaton/NeyroGamer"
+    },
+    {
+      "type": "project",
+      "url": "https://github.com/darkavengersmr/Sudoku-Hunter",
+      "name": "Проект \"Sudoku Hunter\""
     }
   ],
   "type": "project",
