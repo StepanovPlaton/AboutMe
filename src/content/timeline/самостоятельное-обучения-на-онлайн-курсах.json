@@ -1,0 +1,16 @@
+{
+  "skills": [],
+  "achievements": [],
+  "title": "Самостоятельное обучения на онлайн курсах",
+  "description": "Я начинал своё обучение с бесплатных онлайн курсов на Stepik",
+  "type": "education",
+  "startDate": "2016-11-07T08:00:00.000+04:00",
+  "links": [
+    {
+      "name": "Сертификаты",
+      "type": "certificate",
+      "url": "https://github.com/StepanovPlaton/Certificates"
+    }
+  ],
+  "icon": "mdi:certificate-outline"
+}
