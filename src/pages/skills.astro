@@ -36,7 +36,13 @@ const categories = categoryOrder.filter(cat => allCategories.includes(cat));
 // 按分类获取技能
 const skillsByCategory = categories.reduce(
     (acc, category) => {
-        acc[category] = getSkillsByCategory(category);
+        const categorySkills = getSkillsByCategory(category);
+        // 按 опыту сортировка: больше опыта - выше, меньше опыта - ниже
+        acc[category] = categorySkills.sort((a, b) => {
+            const aMonths = a.experience.years * 12 + a.experience.months;
+            const bMonths = b.experience.years * 12 + b.experience.months;
+            return bMonths - aMonths; // Сортировка по убыванию (больше опыта первым)
+        });
         return acc;
     },
     {} as Record<string, typeof skillsData>,

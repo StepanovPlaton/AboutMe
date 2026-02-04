@@ -8,7 +8,7 @@ export const ru: Translation = {
 
     // Навигация
     [Key.home]: "Главная",
-    [Key.archive]: "Архив",
+    [Key.archive]: "Все посты",
     [Key.about]: "О сайте",
     [Key.search]: "Поиск",
 
@@ -148,8 +148,9 @@ export const ru: Translation = {
     [Key.timelineTotalExperience]: "Общий опыт работы",
     [Key.timelineWorkPositions]: "Рабочих позиций",
     [Key.timelineCurrentRole]: "Текущий статус",
-    [Key.timelineEmployed]: "Трудоустроен",
+    [Key.timelineEmployed]: "Рассматриваю предложения",
     [Key.timelineAvailable]: "Доступен",
+    [Key.timelineMoreAchievements]: "... еще {0} достижений",
 
     // Страница дневника
     [Key.diary]: "Дневник",

@@ -50,10 +50,18 @@ export const getProjectStats = () => {
 
 // Get projects by category
 export const getProjectsByCategory = (category?: string) => {
+    let filteredProjects: Project[];
     if (!category || category === "all") {
-        return projectsData;
+        filteredProjects = projectsData;
+    } else {
+        filteredProjects = projectsData.filter((p) => p.category === category);
     }
-    return projectsData.filter((p) => p.category === category);
+    // Sort by startDate in descending order (newest first)
+    return filteredProjects.sort((a, b) => {
+        const dateA = new Date(a.startDate).getTime();
+        const dateB = new Date(b.startDate).getTime();
+        return dateB - dateA;
+    });
 };
 
 // Get featured projects

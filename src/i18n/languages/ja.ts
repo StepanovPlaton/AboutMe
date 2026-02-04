@@ -150,6 +150,7 @@ export const ja: Translation = {
     [Key.timelineCurrentRole]: "現在の状態",
     [Key.timelineEmployed]: "在職中",
     [Key.timelineAvailable]: "入社可能",
+    [Key.timelineMoreAchievements]: "... あと {0} 件の実績",
 
     // 日記ページ
     [Key.diary]: "日記",

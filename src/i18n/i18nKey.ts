@@ -147,6 +147,7 @@ enum I18nKey {
     timelineCurrentRole = "timelineCurrentRole",
     timelineEmployed = "timelineEmployed",
     timelineAvailable = "timelineAvailable",
+    timelineMoreAchievements = "timelineMoreAchievements",
 
     // 短文页面
     diary = "diary",

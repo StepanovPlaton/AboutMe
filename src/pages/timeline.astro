@@ -94,7 +94,7 @@ const getTypeIcon = (type: string) => {
                     <h2 class="text-2xl font-bold text-black/90 dark:text-white/90 mb-4">
                         {i18n(I18nKey.timelineCurrent)}
                     </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 gap-6">
                         {currentItems.map((item) => (
                             <TimelineItem item={item} layout="card" size="medium" />
                         ))}

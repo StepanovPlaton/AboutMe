@@ -69,7 +69,11 @@ let groups = $derived.by(() => {
 
     if (categories.length > 0) {
         filteredPosts = filteredPosts.filter(
-            (post) => post.data.category && categories.includes(post.data.category),
+            (post) => {
+                if (!post.data.category) return false;
+                const postCategory = post.data.category.trim();
+                return categories.some(cat => cat.trim() === postCategory);
+            },
         );
     }
 

@@ -150,6 +150,7 @@ export const zh: Translation = {
     [Key.timelineCurrentRole]: "当前状态",
     [Key.timelineEmployed]: "在职",
     [Key.timelineAvailable]: "可入职",
+    [Key.timelineMoreAchievements]: "... 还有 {0} 项成就",
 
     // 短文页面
     [Key.diary]: "日记",

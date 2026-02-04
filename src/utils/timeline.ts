@@ -22,6 +22,7 @@ export interface TimelineItem {
     icon?: string; // Iconify icon name
     color?: string;
     featured?: boolean;
+    not_pin?: boolean; // If true, exclude from "Current Status" section
 }
 
 export const timelineData: TimelineItem[] = Object.entries(timelineModules).map(([path, mod]: [string, any]) => {
@@ -74,7 +75,7 @@ export const getFeaturedTimeline = () => {
 
 // Get current ongoing items
 export const getCurrentItems = () => {
-    return timelineData.filter((item) => !item.endDate);
+    return timelineData.filter((item) => !item.endDate && !item.not_pin);
 };
 
 

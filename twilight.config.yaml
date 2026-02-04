@@ -35,8 +35,8 @@ site:
                 - "/assets/images/banner1.png"
         position: "center"
         carousel:
-            enable: true
-            interval: 3.6
+            enable: false
+            interval: 12
             kenBurns: true
         banner:
             homeText:

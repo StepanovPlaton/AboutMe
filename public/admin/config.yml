@@ -97,6 +97,7 @@ collections:
                     -   { label: "Type", name: "type", widget: "select", options: ["certificate","project","other"] }
             -   { label: "Icon", name: "icon", widget: "string", required: false }
             -   { label: "Color", name: "color", widget: "string", required: false }
+            -   { label: "Not Pin", name: "not_pin", widget: "boolean", required: false, default: false, hint: "If enabled, this item will not be shown in the 'Current Status' section" }
 
     -   name: "diary"
         label: "Diary"
@@ -155,11 +156,19 @@ collections:
             -   { label: "Site URL", name: "siteurl", widget: "string" }
             -   { label: "Tags", name: "tags", widget: "list", required: false, default: [] }
 
-    -   name: "worth-mentioning"
-        label: "Worth Mentioning"
-        file: "src/content/worth-mentioning.md"
-        fields:
-            -   { label: "Body", name: "body", widget: "markdown" }
+    -   name: "Static Pages"
+        label: "Static Pages"
+        files:
+            -   label: "Worth Mentioning"
+                name: "worth-mentioning"
+                file: "src/content/worth-mentioning.md"
+                fields:
+                    -   { label: "Body", name: "body", widget: "markdown" }
+            -   label: "About"
+                name: "about"
+                file: "src/content/about.md"
+                fields:
+                    -   { label: "Body", name: "body", widget: "markdown" }
 
 
 editor:

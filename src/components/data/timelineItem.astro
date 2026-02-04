@@ -2,6 +2,7 @@
 import { i18n } from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
 import Icon from "@components/common/icon.astro";
+import { getResolvedSiteLang } from "@utils/language";
 
 
 export interface Props {
@@ -100,10 +101,23 @@ const getLinkIcon = (type: string) => {
     }
 };
 
+// 获取 локаль для форматирования дат
+const getDateLocale = () => {
+    const lang = getResolvedSiteLang();
+    const localeMap: Record<string, string> = {
+        ru: "ru-RU",
+        en: "en-US",
+        zh: "zh-CN",
+        ja: "ja-JP",
+    };
+    return localeMap[lang] || "en-US";
+};
+
 // 格式化日期
 const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("zh-CN", { year: "numeric", month: "long" });
+    const locale = getDateLocale();
+    return date.toLocaleDateString(locale, { year: "numeric", month: "long" });
 };
 
 // 计算持续时间
@@ -330,7 +344,7 @@ const itemColor = item.color || "#3B82F6";
                         ))}
                         {item.achievements.length > 3 && (
                             <li class={`text-black/60 dark:text-white/60 ${sizeClasses.description}`}>
-                                ... 还有 {item.achievements.length - 3} 项成就
+                                {i18n(I18nKey.timelineMoreAchievements).replace("{0}", String(item.achievements.length - 3))}
                             </li>
                         )}
                     </ul>

@@ -150,6 +150,7 @@ export const en: Translation = {
     [Key.timelineCurrentRole]: "Current Status",
     [Key.timelineEmployed]: "Employed",
     [Key.timelineAvailable]: "Available",
+    [Key.timelineMoreAchievements]: "... {0} more achievements",
 
     // Diary Page
     [Key.diary]: "Diary",
