@@ -1,0 +1,13 @@
+{
+  "projects": [],
+  "certifications": [],
+  "name": "Java",
+  "description": "Объектно-ориентированный язык программирования общего назначения",
+  "level": "beginner",
+  "category": "native",
+  "experience": {
+    "years": 0,
+    "months": 3
+  },
+  "icon": "devicon:java"
+}
