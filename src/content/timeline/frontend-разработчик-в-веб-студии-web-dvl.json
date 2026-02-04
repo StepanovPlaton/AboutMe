@@ -1,0 +1,17 @@
+{
+  "skills": [],
+  "achievements": [],
+  "endDate": "2024-05-01T08:00:00.000+04:00",
+  "startDate": "2023-07-01T08:00:00.000+04:00",
+  "title": "Frontend разработчик в веб-студии WEB-DVL",
+  "icon": "mingcute:volleyball-fill",
+  "links": [
+    {
+      "type": "project",
+      "url": "https://100.volley.ru",
+      "name": "Мой проект \"Столетие отечественного волейбола\""
+    }
+  ],
+  "type": "work",
+  "description": "Я был единственным Frontend разработчиком в небольшой студии WEB-DVL. Когда я пришёл мы работали с Bitrix, и использовали его как шаблонизатор, поэтому первое время я занимался верстой и написанием MPA сайта. Но со временем я внедрил React и оптимизировал работу команды и качество наших продуктов. Стек с которым я работал: TypeScript, React 18, Next.js, Zod, MobX, Tailwind CSS, SWR, Docker, Linux"
+}
