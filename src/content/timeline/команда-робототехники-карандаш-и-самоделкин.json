@@ -1,6 +1,16 @@
 {
-  "skills": [],
+  "skills": [
+    "Lego Mindstorms",
+    "Arduino",
+    "Raspberry Pi",
+    "VisualBasic",
+    "Python",
+    "C++",
+    "ML",
+    "CV"
+  ],
   "achievements": [],
+  "position": "",
   "endDate": "2021-07-01T08:00:00.000+04:00",
   "startDate": "2017-10-01T08:00:00.000+04:00",
   "title": "Команда робототехники \"Карандаш и Самоделкин\"",
@@ -13,5 +23,5 @@
     }
   ],
   "type": "project",
-  "description": "Первый практический опыт я получил в дворовой команде робототехников \"Карандаш и Самоделкин\", где занимался сборкой роботов из Lego Mindstorms (NXT, EV3), а так же Arduino и Raspberry Pi. Я программировал на VisualBasic, Python, C++. Занимался CV и ML"
+  "description": "Первый практический опыт я получил в дворовой команде робототехников \"Карандаш и Самоделкин\", где занимался сборкой роботов из Lego Mindstorms (NXT, EV3), а так же Arduino и Raspberry Pi."
 }
