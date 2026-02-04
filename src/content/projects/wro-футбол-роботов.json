@@ -1,0 +1,14 @@
+{
+  "featured": false,
+  "liveDemo": "https://karandashsamodelkin.blogspot.com/2017/07/wro-geniii-5.html",
+  "startDate": "2017-07-07T08:00:00.000+04:00",
+  "techStack": [
+    "C++",
+    "Lego Mindstorms"
+  ],
+  "status": "completed",
+  "title": "WRO Футбол роботов",
+  "tags": [],
+  "description": "Разработки для всемирной олимпиады роботов, в категории футбол роботов",
+  "category": "history"
+}
