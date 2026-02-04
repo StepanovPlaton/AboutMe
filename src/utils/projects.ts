@@ -9,7 +9,7 @@ export interface Project {
     image: string;
     category: "actual" | "history" | "other";
     techStack: string[];
-    status: "completed" | "in-progress" | "planned";
+    status: "completed" | "in-progress" | "planned" | "paused";
     demoUrl?: string;
     sourceUrl?: string;
     startDate: string;
@@ -38,12 +38,14 @@ export const getProjectStats = () => {
         (p) => p.status === "in-progress",
     ).length;
     const planned = projectsData.filter((p) => p.status === "planned").length;
+    const paused = projectsData.filter((p) => p.status === "paused").length;
     return {
         total,
         byStatus: {
             completed,
             inProgress,
             planned,
+            paused,
         },
     };
 };
@@ -71,9 +73,40 @@ export const getFeaturedProjects = () => {
 
 // Get all tech stacks
 export const getAllTechStack = () => {
-    const techSet = new Set<string>();
+    // Создаем Map для хранения информации о каждой технологии
+    const techMap = new Map<string, { count: number; latestProjectDate: number }>();
+    
+    // Подсчитываем упоминания и находим самую свежую дату проекта для каждой технологии
     projectsData.forEach((project) => {
-        project.techStack.forEach((tech) => techSet.add(tech));
+        const projectDate = new Date(project.startDate).getTime();
+        project.techStack.forEach((tech) => {
+            const existing = techMap.get(tech);
+            if (existing) {
+                existing.count++;
+                // Обновляем дату, если текущий проект свежее
+                if (projectDate > existing.latestProjectDate) {
+                    existing.latestProjectDate = projectDate;
+                }
+            } else {
+                techMap.set(tech, { count: 1, latestProjectDate: projectDate });
+            }
+        });
     });
-    return Array.from(techSet).sort();
+    
+    // Преобразуем Map в массив и сортируем
+    // Сначала по количеству упоминаний (по убыванию), затем по дате самого свежего проекта (по убыванию)
+    return Array.from(techMap.entries())
+        .sort((a, b) => {
+            const [techA, dataA] = a;
+            const [techB, dataB] = b;
+            
+            // Сначала сортируем по количеству упоминаний (по убыванию)
+            if (dataB.count !== dataA.count) {
+                return dataB.count - dataA.count;
+            }
+            
+            // Если количество одинаковое, сортируем по дате самого свежего проекта (по убыванию)
+            return dataB.latestProjectDate - dataA.latestProjectDate;
+        })
+        .map(([tech]) => tech); // Возвращаем только названия технологий
 };

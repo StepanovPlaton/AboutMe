@@ -11,7 +11,7 @@ export interface Props {
         image?: string;
         category: string;
         techStack: string[];
-        status: "completed" | "in-progress" | "planned";
+        status: "completed" | "in-progress" | "planned" | "paused";
         demoUrl?: string;
         sourceUrl?: string;
         startDate: string;
@@ -40,6 +40,8 @@ const getStatusStyle = (status: string) => {
             return "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400";
         case "planned":
             return "bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400";
+        case "paused":
+            return "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400";
         default:
             return "bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400";
     }
@@ -54,6 +56,8 @@ const getStatusText = (status: string) => {
             return i18n(I18nKey.projectsInProgress);
         case "planned":
             return i18n(I18nKey.projectsPlanned);
+        case "paused":
+            return i18n(I18nKey.projectsPaused);
         default:
             return status;
     }
