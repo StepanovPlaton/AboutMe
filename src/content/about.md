@@ -17,3 +17,5 @@
 ::github{repo="Spr-Aachen/Twilight"}
 **Исходный код моего сайта**
 ::github{repo="StepanovPlaton/AboutMe"}
+**Гайд по настройке домашнего сервера, одной из функцией которого является хостинг этого сайта**
+::github{repo="StepanovPlaton/HomeServerServices"}
