@@ -3,7 +3,7 @@
   "featured": false,
   "startDate": "2024-10-28T08:00:00.000+04:00",
   "techStack": [],
-  "status": "in-progress",
+  "status": "paused",
   "title": "Nand2Tetris",
   "tags": [],
   "description": "Работы по курсу Nand2tetris,  в рамках которого мы с нуля создадим 16-битный компьютер, способный запустить тетрис",
