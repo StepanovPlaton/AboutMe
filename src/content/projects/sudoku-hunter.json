@@ -1,0 +1,15 @@
+{
+  "sourceCode": "https://github.com/darkavengersmr/Sudoku-Hunter",
+  "featured": false,
+  "liveDemo": "https://karandashsamodelkin.blogspot.com/2019/07/sudoku-hunter.html",
+  "startDate": "2019-07-07T08:00:00.000+04:00",
+  "techStack": [
+    "Python",
+    "Lego Mindstorms"
+  ],
+  "status": "completed",
+  "title": "Sudoku Hunter",
+  "tags": [],
+  "description": "Пистолет распознающий и решающий судоку. Машинное зрение",
+  "category": "history"
+}
