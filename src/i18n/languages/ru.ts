@@ -9,7 +9,7 @@ export const ru: Translation = {
     // Навигация
     [Key.home]: "Главная",
     [Key.archive]: "Все посты",
-    [Key.about]: "О сайте",
+    [Key.about]: "Контакты",
     [Key.search]: "Поиск",
 
     // Посты

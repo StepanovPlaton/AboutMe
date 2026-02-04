@@ -122,8 +122,8 @@ sidebar:
                 position: "sticky"
                 customProps:
                     depth: 3
-            # -   type: "statistics"
-            #     position: "sticky"
+            #-   type: "statistics"
+            #    position: "sticky"
 profile:
     avatar: "/assets/images/avatar.jpg"
     name: "Степанов Платон"
