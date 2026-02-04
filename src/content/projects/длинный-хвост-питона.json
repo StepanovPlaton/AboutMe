@@ -1,0 +1,16 @@
+{
+  "sourceCode": "https://github.com/darkavengersmr/long_python_tail1",
+  "featured": false,
+  "liveDemo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiImjDF4SZNL_Na_72utddAlcGiBDpu9DQBZzVu4_9ydLfTfRKVUzpkERV37yDr4FOfASHbg-BWGae02A7bRT6JVYCpjnvBeUmxdW6-VXf0Nv01vFF6AKWiJwy2YPH-zaf7KNzk4ba7S1NV/s1600/ezgif-4-b6a157a212.gif",
+  "startDate": "2018-05-06T08:00:00.000+04:00",
+  "techStack": [
+    "Python",
+    "Lego Mindstorms",
+    "Raspberry Pi"
+  ],
+  "status": "completed",
+  "title": "Длинный хвост питона",
+  "tags": [],
+  "description": "Лего-автомобиль с компьютерным зрением ездит по трассе со знаками",
+  "category": "history"
+}
