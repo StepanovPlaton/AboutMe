@@ -1,0 +1,13 @@
+{
+  "projects": [],
+  "certifications": [],
+  "name": "PostgreSQL",
+  "description": "Бесплатная объектно-реляционная система управления базами данных (СУБД) с открытым исходным кодом",
+  "icon": "devicon:postgresql",
+  "category": "backend",
+  "level": "advanced",
+  "experience": {
+    "years": 4,
+    "months": 6
+  }
+}
