@@ -40,24 +40,57 @@ const id = `profile-${side}`;
         <div class="h-1 w-5 bg-(--primary) mx-auto rounded-full mb-2 transition"></div>
         <div class="text-center text-neutral-400 mb-2.5 transition">{profileConfig.bio}</div>
         <div class="flex gap-2 justify-center mb-1">
-            {profileConfig.links.length > 1 && profileConfig.links.map(item =>
-                    <a rel="me" aria-label={item.name} href={item.url} target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90 flex items-center justify-center">
-                        {item.rawIcon ? (
-                            <span class="text-[1.5rem] [&>svg]:w-full [&>svg]:h-full [&>svg]:block" set:html={item.rawIcon}></span>
-                        ) : (
-                            <Icon name={item.icon} class="text-[1.5rem]"></Icon>
-                        )}
-                    </a>
+            {profileConfig.links.length > 1 && profileConfig.links.map((item, index) =>
+                    item.copy ? (
+                        <button 
+                            type="button"
+                            aria-label={`Copy ${item.name}`}
+                            data-copy-value={item.copy}
+                            class="btn-regular rounded-lg h-10 w-10 active:scale-90 flex items-center justify-center copy-button"
+                        >
+                            {item.rawIcon ? (
+                                <span class="text-[1.5rem] [&>svg]:w-full [&>svg]:h-full [&>svg]:block" set:html={item.rawIcon}></span>
+                            ) : (
+                                <Icon name={item.icon || ""} class="text-[1.5rem]"></Icon>
+                            )}
+                        </button>
+                    ) : (
+                        <a rel="me" aria-label={item.name} href={item.url} target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90 flex items-center justify-center">
+                            {item.rawIcon ? (
+                                <span class="text-[1.5rem] [&>svg]:w-full [&>svg]:h-full [&>svg]:block" set:html={item.rawIcon}></span>
+                            ) : (
+                                <Icon name={item.icon || ""} class="text-[1.5rem]"></Icon>
+                            )}
+                        </a>
+                    )
             )}
-            {profileConfig.links.length == 1 && <a rel="me" aria-label={profileConfig.links[0].name} href={profileConfig.links[0].url} target="_blank"
-                                            class="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95 flex items-center">
-                {profileConfig.links[0].rawIcon ? (
-                    <span class="text-[1.5rem] [&>svg]:w-full [&>svg]:h-full [&>svg]:block" set:html={profileConfig.links[0].rawIcon}></span>
+            {profileConfig.links.length == 1 && (
+                profileConfig.links[0].copy ? (
+                    <button 
+                        type="button"
+                        aria-label={`Copy ${profileConfig.links[0].name}`}
+                        data-copy-value={profileConfig.links[0].copy}
+                        class="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95 flex items-center copy-button"
+                    >
+                        {profileConfig.links[0].rawIcon ? (
+                            <span class="text-[1.5rem] [&>svg]:w-full [&>svg]:h-full [&>svg]:block" set:html={profileConfig.links[0].rawIcon}></span>
+                        ) : (
+                            <Icon name={profileConfig.links[0].icon || ""} class="text-[1.5rem]"></Icon>
+                        )}
+                        {profileConfig.links[0].name}
+                    </button>
                 ) : (
-                    <Icon name={profileConfig.links[0].icon} class="text-[1.5rem]"></Icon>
-                )}
-                {profileConfig.links[0].name}
-            </a>}
+                    <a rel="me" aria-label={profileConfig.links[0].name} href={profileConfig.links[0].url} target="_blank"
+                        class="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95 flex items-center">
+                        {profileConfig.links[0].rawIcon ? (
+                            <span class="text-[1.5rem] [&>svg]:w-full [&>svg]:h-full [&>svg]:block" set:html={profileConfig.links[0].rawIcon}></span>
+                        ) : (
+                            <Icon name={profileConfig.links[0].icon || ""} class="text-[1.5rem]"></Icon>
+                        )}
+                        {profileConfig.links[0].name}
+                    </a>
+                )
+            )}
         </div>
         {umamiEnabled && (
             <hr class="my-2 border-t border-dashed border-gray-300 dark:border-gray-700" />
@@ -74,6 +107,119 @@ const id = `profile-${side}`;
         )}
     </div>
 </div>
+
+<script is:inline>
+    // Функция для показа уведомления
+    function showToast(message) {
+        // Удаляем существующее уведомление, если есть
+        const existingToast = document.getElementById('copy-toast');
+        if (existingToast) {
+            existingToast.remove();
+        }
+
+        // Создаем элемент уведомления
+        const toast = document.createElement('div');
+        toast.id = 'copy-toast';
+        toast.textContent = message;
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--tw-prose-bg, #1a1a1a);
+            color: var(--tw-prose-fg, #fff);
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        `;
+        document.body.appendChild(toast);
+
+        // Показываем уведомление
+        requestAnimationFrame(() => {
+            toast.style.opacity = '1';
+        });
+
+        // Скрываем и удаляем через 2 секунды
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.remove();
+                }
+            }, 300);
+        }, 2000);
+    }
+
+    // Обработка копирования в буфер обмена
+    function setupCopyButtons() {
+        const copyButtons = document.querySelectorAll('.copy-button');
+        copyButtons.forEach(button => {
+            // Удаляем старые обработчики, если есть
+            const newButton = button.cloneNode(true);
+            button.parentNode?.replaceChild(newButton, button);
+            
+            newButton.addEventListener('click', async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const copyValue = newButton.getAttribute('data-copy-value');
+                if (!copyValue) return;
+
+                try {
+                    await navigator.clipboard.writeText(copyValue);
+                    // Визуальная обратная связь
+                    newButton.classList.add('opacity-50', 'scale-95');
+                    setTimeout(() => {
+                        newButton.classList.remove('opacity-50', 'scale-95');
+                    }, 200);
+                    // Показываем уведомление
+                    showToast('Email скопирован!');
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                    // Fallback для старых браузеров
+                    const textArea = document.createElement('textarea');
+                    textArea.value = copyValue;
+                    textArea.style.position = 'fixed';
+                    textArea.style.opacity = '0';
+                    textArea.style.pointerEvents = 'none';
+                    textArea.style.left = '-9999px';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    try {
+                        const successful = document.execCommand('copy');
+                        if (successful) {
+                            newButton.classList.add('opacity-50', 'scale-95');
+                            setTimeout(() => {
+                                newButton.classList.remove('opacity-50', 'scale-95');
+                            }, 200);
+                            showToast('Email скопирован!');
+                        }
+                    } catch (fallbackErr) {
+                        console.error('Fallback copy failed:', fallbackErr);
+                        showToast('Не удалось скопировать');
+                    }
+                    document.body.removeChild(textArea);
+                }
+            });
+        });
+    }
+
+    // Инициализация при загрузке страницы
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupCopyButtons);
+    } else {
+        setupCopyButtons();
+    }
+    
+    // Обработка навигации Astro
+    document.addEventListener('astro:page-load', setupCopyButtons);
+    document.addEventListener('astro:after-swap', setupCopyButtons);
+</script>
 
 {umamiEnabled && (
     <script>

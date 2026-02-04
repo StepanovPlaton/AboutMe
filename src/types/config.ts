@@ -282,8 +282,10 @@ export type ProfileConfig = {
     // 链接配置
     links: {
         name: string;
-        url: string;
-        icon: string;
+        url?: string;
+        icon?: string;
+        rawIcon?: string;
+        copy?: string;
     }[];
 };
 
