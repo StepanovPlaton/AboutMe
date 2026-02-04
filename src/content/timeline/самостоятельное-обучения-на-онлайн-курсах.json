@@ -1,10 +1,10 @@
 {
   "skills": [],
   "achievements": [],
-  "title": "Самостоятельное обучение на онлайн курсах",
-  "description": "Я начинал своё обучение с бесплатных онлайн курсов на Stepik",
-  "type": "education",
+  "endDate": "2020-06-05T08:00:00.000+04:00",
   "startDate": "2016-11-07T08:00:00.000+04:00",
+  "title": "Самостоятельное обучение на онлайн курсах",
+  "icon": "mdi:certificate-outline",
   "links": [
     {
       "name": "Сертификаты",
@@ -12,5 +12,6 @@
       "url": "https://github.com/StepanovPlaton/Certificates"
     }
   ],
-  "icon": "mdi:certificate-outline"
+  "type": "education",
+  "description": "Я начинал своё обучение с бесплатных онлайн курсов на Stepik, где изучал базовые языки программирования (Python, C/C++, JS, C#), а так же Git, базы данных и администрирование GNU/Linux"
 }
