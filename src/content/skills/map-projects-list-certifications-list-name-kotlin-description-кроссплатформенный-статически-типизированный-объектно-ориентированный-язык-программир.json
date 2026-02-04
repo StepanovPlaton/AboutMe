@@ -1,0 +1,13 @@
+{
+  "projects": [],
+  "certifications": [],
+  "name": "Kotlin",
+  "description": " кроссплатформенный, статически типизированный, объектно-ориентированный язык программирования, работает поверх виртуальной машины Java (JVM)",
+  "experience": {
+    "years": 0,
+    "months": 4
+  },
+  "level": "beginner",
+  "category": "native",
+  "icon": "material-icon-theme:kotlin"
+}
