@@ -5,7 +5,7 @@
   "techStack": [
     "C"
   ],
-  "status": "completed",
+  "status": "in-progress",
   "title": "OSin1000Lines",
   "tags": [],
   "description": "Операционная система для QEMU RISC-V в 1000 строк кода на С",
