@@ -1,0 +1,14 @@
+{
+  "sourceCode": "https://github.com/darkavengersmr/PiTanksOnline",
+  "featured": false,
+  "liveDemo": "https://karandashsamodelkin.blogspot.com/2019/01/pitanks-online.html",
+  "startDate": "2019-01-08T08:00:00.000+04:00",
+  "techStack": [
+    "Python"
+  ],
+  "status": "completed",
+  "title": "PiTanks Online",
+  "tags": [],
+  "description": "Открытая онлайн игра для программистов",
+  "category": "history"
+}
