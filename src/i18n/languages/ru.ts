@@ -88,7 +88,7 @@ export const ru: Translation = {
     [Key.projectsCompleted]: "Завершён",
     [Key.projectsInProgress]: "В разработке",
     [Key.projectsTechStack]: "Статистика технологий",
-    [Key.projectsFeatured]: "Сейчас я работаю этим",
+    [Key.projectsFeatured]: "Сейчас я работаю над этим",
     [Key.projectsPlanned]: "Запланированных",
     [Key.projectsDemo]: "Демо",
     [Key.projectsSource]: "Исходный код",
