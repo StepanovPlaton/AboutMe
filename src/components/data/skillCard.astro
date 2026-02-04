@@ -77,6 +77,22 @@ const getLevelWidth = (level: string) => {
     }
 };
 
+// 技能等级进度条颜色映射 (从绿色到红色)
+const getLevelProgressColor = (level: string) => {
+    switch (level) {
+        case "expert":
+            return "#ef4444"; // red-500
+        case "advanced":
+            return "#f97316"; // orange-500
+        case "intermediate":
+            return "#eab308"; // yellow-500
+        case "beginner":
+            return "#22c55e"; // green-500
+        default:
+            return "#6b7280"; // gray-500
+    }
+};
+
 // 尺寸样式映射
 const getSizeClasses = (size: string) => {
     switch (size) {
@@ -175,7 +191,7 @@ const getExperienceText = (experience: Props["skill"]["experience"]) => {
                         <div class={`w-full bg-gray-200 dark:bg-gray-700 rounded-full ${sizeClasses.progress}`}>
                             <div
                                 class={`rounded-full transition-all duration-500 ${sizeClasses.progress}`}
-                                style={`width: ${getLevelWidth(skill.level)}; background-color: ${skillColor}`}
+                                style={`width: ${getLevelWidth(skill.level)}; background-color: ${skill.color || getLevelProgressColor(skill.level)}`}
                             ></div>
                         </div>
                     </div>
