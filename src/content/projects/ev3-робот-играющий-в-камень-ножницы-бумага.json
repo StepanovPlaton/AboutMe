@@ -1,0 +1,14 @@
+{
+  "featured": false,
+  "liveDemo": "https://karandashsamodelkin.blogspot.com/2017/11/ev3.html",
+  "startDate": "2017-10-26T08:00:00.000+04:00",
+  "techStack": [
+    "Python",
+    "Lego Mindstorms"
+  ],
+  "status": "completed",
+  "title": "EV3 Робот, играющий в \"Камень, ножницы, бумага\"",
+  "tags": [],
+  "description": "Распознавание жестов с помощью ИИ с нуля, без использование библиотек машинного обучения",
+  "category": "history"
+}
