@@ -4,7 +4,8 @@
   "startDate": "2018-01-28T08:00:00.000+04:00",
   "techStack": [
     "Lego Mindstorms",
-    "Python"
+    "Python",
+    "NumPy"
   ],
   "status": "completed",
   "title": "Voic3 Command3R",
