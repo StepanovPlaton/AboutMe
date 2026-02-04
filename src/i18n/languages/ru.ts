@@ -125,7 +125,7 @@ export const ru: Translation = {
     [Key.skillsByCategory]: "Распределение по категориям",
 
     // Страница временной шкалы
-    [Key.timeline]: "История",//"Временная шкала",
+    [Key.timeline]: "Опыт",//"Временная шкала",
     [Key.timelineSubtitle]: "Мой путь развития и важные вехи",
     [Key.timelineEducation]: "Образование",
     [Key.timelineWork]: "Опыт работы",
@@ -164,7 +164,7 @@ export const ru: Translation = {
     [Key.diaryDaysAgo]: "дней назад",
 
     // Страница альбомов
-    [Key.albums]: "Медиа", //"Альбомы",
+    [Key.albums]: "Моменты", //"Альбомы",
     [Key.albumsSubtitle]: "Скриншоты моих работ и многое другое",
     [Key.albumsEmpty]: "Нет содержимого",
     [Key.albumsEmptyDesc]: "Альбомы ещё не созданы. Добавьте прекрасные воспоминания!",
@@ -193,7 +193,7 @@ export const ru: Translation = {
     [Key.friends]: "Друзья",
 
     // Страница проектов достойных упоминания
-    [Key.worthMentioning]: "Посмотрите также",
+    [Key.worthMentioning]: "Это интересно",
     [Key.worthMentioningSubtitle]: "Проекты достойные упоминания",
 
     // Страница RSS
