@@ -1,0 +1,14 @@
+{
+  "featured": false,
+  "liveDemo": "https://karandashsamodelkin.blogspot.com/2018/01/voic3-command3r.html",
+  "startDate": "2018-01-28T08:00:00.000+04:00",
+  "techStack": [
+    "Lego Mindstorms",
+    "Python"
+  ],
+  "status": "completed",
+  "title": "Voic3 Command3R",
+  "tags": [],
+  "description": "Робот подчиняющийся голосовым командам. Распознавание голоса без ИИ",
+  "category": "history"
+}
