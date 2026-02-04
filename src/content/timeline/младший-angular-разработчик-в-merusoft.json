@@ -7,6 +7,13 @@
   "organization": "",
   "title": "Младший Angular разработчик в Merusoft",
   "icon": "hugeicons:office",
+  "links": [
+    {
+      "type": "project",
+      "url": "https://merusoft.ru/smartoffice/",
+      "name": "Merusoft \"Smart Office\""
+    }
+  ],
   "type": "work",
   "description": "Я перешёл в отдел Frontend разработки и начал заниматься системой умного офиса. Мне поручали мелкие фичи и исправление багов, я набирался опыта и учился. Стек с которым я работал: TypeScript, Angular 11, RxJS, Ionic Framework"
 }
