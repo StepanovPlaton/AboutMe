@@ -1,0 +1,11 @@
+{
+  "skills": [],
+  "achievements": [],
+  "not_pin": false,
+  "endDate": "2025-05-01T08:00:00.000+04:00",
+  "startDate": "2024-09-01T08:00:00.000+04:00",
+  "title": "Доп. образование \"Frontend-технологии (VueJS)\"",
+  "icon": "mingcute:vue-fill",
+  "type": "education",
+  "description": "Я обучался на программе дополнительного образования \"Frontend-технологии (VueJS)\" в Самарском университете, где изучал разработку на VueJS"
+}
