@@ -133,16 +133,31 @@ const sizeClasses = getSizeClasses(size);
         </p>
         <!-- 技术栈 -->
         {project.techStack && project.techStack.length > 0 && (
-            <div class="flex flex-wrap gap-1 mb-4">
+            <div class="flex flex-wrap gap-1 mb-4" data-tech-stack-container data-max-visible={maxTechStack}>
                 {project.techStack.slice(0, maxTechStack).map((tech) => (
                     <span class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.tech}`}>
                         {tech}
                     </span>
                 ))}
                 {project.techStack.length > maxTechStack && (
-                    <span class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400 rounded-sm ${sizeClasses.tech}`}>
-                        +{project.techStack.length - maxTechStack}
-                    </span>
+                    <>
+                        {project.techStack.slice(maxTechStack).map((tech) => (
+                            <span 
+                                class={`hidden px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.tech} tech-stack-hidden`}
+                                data-tech-hidden
+                            >
+                                {tech}
+                            </span>
+                        ))}
+                        <button 
+                            type="button"
+                            class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400 rounded-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors ${sizeClasses.tech}`}
+                            data-tech-stack-toggle
+                            data-hidden-count={project.techStack.length - maxTechStack}
+                        >
+                            +{project.techStack.length - maxTechStack}
+                        </button>
+                    </>
                 )}
             </div>
         )}
@@ -181,3 +196,38 @@ const sizeClasses = getSizeClasses(size);
         </div>
     </div>
 </div>
+
+<script>
+    // Раскрытие списка технологий при клике на "+"
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButtons = document.querySelectorAll('[data-tech-stack-toggle]');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const container = button.closest('[data-tech-stack-container]');
+                const hiddenElements = container?.querySelectorAll('[data-tech-hidden]');
+                const hiddenCount = parseInt(button.getAttribute('data-hidden-count') || '0');
+                
+                if (hiddenElements && hiddenElements.length > 0) {
+                    const isExpanded = !hiddenElements[0].classList.contains('hidden');
+                    
+                    if (isExpanded) {
+                        // Сворачиваем: скрываем все скрытые элементы
+                        hiddenElements.forEach(el => {
+                            el.classList.add('hidden');
+                        });
+                        button.textContent = `+${hiddenCount}`;
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Раскрываем: показываем все скрытые элементы
+                        hiddenElements.forEach(el => {
+                            el.classList.remove('hidden');
+                        });
+                        button.textContent = '−';
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                }
+            });
+        });
+    });
+</script>

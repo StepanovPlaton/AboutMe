@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { getCategoryUrl } from "@utils/url";
 import { i18n } from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
+import { UNCATEGORIZED } from "@constants/constants";
 
 
 // // Retrieve posts and sort them by publication date
@@ -110,7 +111,12 @@ export async function getCategoryList(): Promise<Category[]> {
     });
 
     const ret: Category[] = [];
+    const uncategorizedKey = i18n(I18nKey.uncategorized);
     for (const c of lst) {
+        // Исключаем категорию "Без категории" из списка
+        if (c === uncategorizedKey) {
+            continue;
+        }
         ret.push({
             name: c,
             count: count[c],

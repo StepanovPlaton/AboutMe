@@ -254,12 +254,32 @@ const itemColor = item.color || "#3B82F6";
                 <!-- 技能 -->
                 {item.skills && item.skills.length > 0 && (
                     <div class="mb-4">
-                        <div class="flex flex-wrap gap-1">
-                            {item.skills.map((skill) => (
+                        <div class="flex flex-wrap gap-1" data-skills-container>
+                            {item.skills.slice(0, 3).map((skill) => (
                                 <span class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.badge}`}>
                                     {skill}
                                 </span>
                             ))}
+                            {item.skills.length > 3 && (
+                                <>
+                                    {item.skills.slice(3).map((skill) => (
+                                        <span 
+                                            class={`hidden px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.badge} skills-hidden`}
+                                            data-skill-hidden
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                    <button 
+                                        type="button"
+                                        class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400 rounded-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors ${sizeClasses.badge}`}
+                                        data-skills-toggle
+                                        data-hidden-count={item.skills.length - 3}
+                                    >
+                                        +{item.skills.length - 3}
+                                    </button>
+                                </>
+                            )}
                         </div>
                     </div>
                 )}
@@ -353,16 +373,31 @@ const itemColor = item.color || "#3B82F6";
             <!-- 技能和链接 -->
             <div class="flex items-center justify-between">
                 {item.skills && item.skills.length > 0 && (
-                    <div class="flex flex-wrap gap-1">
+                    <div class="flex flex-wrap gap-1" data-skills-container>
                         {item.skills.slice(0, 3).map((skill) => (
                             <span class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.badge}`}>
                                 {skill}
                             </span>
                         ))}
                         {item.skills.length > 3 && (
-                            <span class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400 rounded-sm ${sizeClasses.badge}`}>
-                                +{item.skills.length - 3}
-                            </span>
+                            <>
+                                {item.skills.slice(3).map((skill) => (
+                                    <span 
+                                        class={`hidden px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.badge} skills-hidden`}
+                                        data-skill-hidden
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                                <button 
+                                    type="button"
+                                    class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400 rounded-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors ${sizeClasses.badge}`}
+                                    data-skills-toggle
+                                    data-hidden-count={item.skills.length - 3}
+                                >
+                                    +{item.skills.length - 3}
+                                </button>
+                            </>
                         )}
                     </div>
                 )}
@@ -384,3 +419,40 @@ const itemColor = item.color || "#3B82F6";
         </div>
     </div>
 )}
+
+<script>
+    // Раскрытие списка навыков при клике на "+"
+    // Используем делегирование событий для надёжности
+    document.addEventListener('click', (e) => {
+        const button = (e.target as HTMLElement).closest('[data-skills-toggle]') as HTMLElement;
+        if (!button) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const container = button.closest('[data-skills-container]');
+        if (!container) return;
+        
+        const hiddenElements = container.querySelectorAll('[data-skill-hidden]');
+        if (hiddenElements.length === 0) return;
+        
+        const hiddenCount = parseInt(button.getAttribute('data-hidden-count') || '0');
+        const isExpanded = !hiddenElements[0].classList.contains('hidden');
+        
+        if (isExpanded) {
+            // Сворачиваем: скрываем все скрытые элементы
+            hiddenElements.forEach(el => {
+                el.classList.add('hidden');
+            });
+            button.textContent = `+${hiddenCount}`;
+            button.setAttribute('aria-expanded', 'false');
+        } else {
+            // Раскрываем: показываем все скрытые элементы
+            hiddenElements.forEach(el => {
+                el.classList.remove('hidden');
+            });
+            button.textContent = '−';
+            button.setAttribute('aria-expanded', 'true');
+        }
+    });
+</script>

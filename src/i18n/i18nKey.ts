@@ -87,6 +87,7 @@ enum I18nKey {
     projectsInProgress = "projectsInProgress",
     projectsTechStack = "projectsTechStack",
     projectsFeatured = "projectsFeatured",
+    projectsInWork = "projectsInWork",
     projectsPlanned = "projectsPlanned",
     projectsPaused = "projectsPaused",
     projectsDemo = "projectsDemo",

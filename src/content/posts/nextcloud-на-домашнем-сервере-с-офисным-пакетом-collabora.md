@@ -3,7 +3,6 @@ title: NextCloud на домашнем сервере с офисным паке
 published: 2026-02-12T19:26:00.000+04:00
 cover: /images/nextcloud.png
 tags:
-  - DevOps
   - Linux
 draft: false
 ---

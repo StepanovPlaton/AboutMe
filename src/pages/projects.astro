@@ -9,6 +9,7 @@ import {
     getProjectStats,
     getProjectsByCategory,
     getFeaturedProjects,
+    getInWorkProjects,
     getAllTechStack,
 } from "@utils/projects";
 import { UNCATEGORIZED } from "@constants/constants";
@@ -25,6 +26,7 @@ const subtitle = LinkPresets[LinkPreset.Projects].description;
 // 获取项目统计信息
 const stats = getProjectStats();
 const featuredProjects = getFeaturedProjects();
+const inWorkProjects = getInWorkProjects();
 const allTechStack = getAllTechStack();
 
 // 定义分类顺序
@@ -100,6 +102,22 @@ const getCategoryText = (category: string) => {
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {featuredProjects.map((project) => (
+                            <ProjectCard project={project} size="large" showImage={true} maxTechStack={4} />
+                        ))}
+                    </div>
+                </div>
+            )}
+            <!-- In-work проекты -->
+            {inWorkProjects.length > 0 && (
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-black/90 dark:text-white/90 mb-4">
+                        {i18n(I18nKey.projectsInWork)}
+                        <span class="text-lg font-normal text-black/60 dark:text-white/60 ml-2">
+                            ({inWorkProjects.length})
+                        </span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {inWorkProjects.map((project) => (
                             <ProjectCard project={project} size="large" showImage={true} maxTechStack={4} />
                         ))}
                     </div>

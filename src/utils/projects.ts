@@ -58,6 +58,9 @@ export const getProjectsByCategory = (category?: string) => {
     } else {
         filteredProjects = projectsData.filter((p) => p.category === category);
     }
+    // Exclude featured projects and in-progress projects from category lists
+    // (they are shown in their dedicated sections)
+    filteredProjects = filteredProjects.filter((p) => !p.featured && p.status !== "in-progress");
     // Sort by startDate in descending order (newest first)
     return filteredProjects.sort((a, b) => {
         const dateA = new Date(a.startDate).getTime();
@@ -68,7 +71,18 @@ export const getProjectsByCategory = (category?: string) => {
 
 // Get featured projects
 export const getFeaturedProjects = () => {
-    return projectsData.filter((p) => p.featured);
+    return projectsData.filter((p) => p.featured === true);
+};
+
+// Get in-work projects (in-progress status, excluding featured)
+export const getInWorkProjects = () => {
+    return projectsData
+        .filter((p) => p.status === "in-progress" && !p.featured)
+        .sort((a, b) => {
+            const dateA = new Date(a.startDate).getTime();
+            const dateB = new Date(b.startDate).getTime();
+            return dateB - dateA;
+        });
 };
 
 // Get all tech stacks
