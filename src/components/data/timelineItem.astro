@@ -254,32 +254,12 @@ const itemColor = item.color || "#3B82F6";
                 <!-- 技能 -->
                 {item.skills && item.skills.length > 0 && (
                     <div class="mb-4">
-                        <div class="flex flex-wrap gap-1" data-skills-container>
-                            {item.skills.slice(0, 3).map((skill) => (
+                        <div class="flex flex-wrap gap-1">
+                            {item.skills.map((skill) => (
                                 <span class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.badge}`}>
                                     {skill}
                                 </span>
                             ))}
-                            {item.skills.length > 3 && (
-                                <>
-                                    {item.skills.slice(3).map((skill) => (
-                                        <span 
-                                            class={`hidden px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 rounded-sm ${sizeClasses.badge} skills-hidden`}
-                                            data-skill-hidden
-                                        >
-                                            {skill}
-                                        </span>
-                                    ))}
-                                    <button 
-                                        type="button"
-                                        class={`px-2 py-1 bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400 rounded-sm cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors ${sizeClasses.badge}`}
-                                        data-skills-toggle
-                                        data-hidden-count={item.skills.length - 3}
-                                    >
-                                        +{item.skills.length - 3}
-                                    </button>
-                                </>
-                            )}
                         </div>
                     </div>
                 )}
