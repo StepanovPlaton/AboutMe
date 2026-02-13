@@ -22,14 +22,9 @@
       "name": "Блог команды \"Карандаш и Самоделкин\""
     },
     {
-      "type": "project",
-      "name": "Проект \"NeyroGamer\"",
-      "url": "https://github.com/StepanovPlaton/NeyroGamer"
-    },
-    {
-      "type": "project",
-      "url": "https://github.com/darkavengersmr/Sudoku-Hunter",
-      "name": "Проект \"Sudoku Hunter\""
+      "name": "Лучшие проекты",
+      "url": "/albums/проекты-в-составе-команды-робототехников-карандаш-и-самоделкин/",
+      "type": "project"
     }
   ],
   "type": "project",
