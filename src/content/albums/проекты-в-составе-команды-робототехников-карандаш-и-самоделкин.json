@@ -1,0 +1,40 @@
+{
+  "photos": [
+    {
+      "tags": [],
+      "src": "/images/maxresdefault.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/knb.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/ezgif-4-b6a157a212.gif"
+    },
+    {
+      "tags": [],
+      "src": "/images/voic3command3r.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/ezgif-1-432ea316e5c0.gif"
+    },
+    {
+      "tags": [],
+      "src": "/images/ezgif-1-c5a1c32a54d9.gif"
+    },
+    {
+      "tags": [],
+      "src": "/images/4.gif"
+    }
+  ],
+  "layout": "masonry",
+  "date": "2016-11-08T08:00:00.000+04:00",
+  "visible": true,
+  "cover": "/images/maxresdefault.jpg",
+  "title": "Проекты в составе команды робототехников \"Карандаш и Самоделкин\"",
+  "tags": [],
+  "description": "Всё детство я был участников дворовой команды робототехников \"Карандаш и Самоделкин\", и работал над многими интересными проектами. Я писал игры, алгоритмы CV и ML, участвовал в WRO. Это несколько примеров моих работ",
+  "columns": 2
+}
