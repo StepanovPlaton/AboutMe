@@ -22,6 +22,7 @@ export interface Props {
     size?: "small" | "medium" | "large";
     showImage?: boolean;
     maxTechStack?: number;
+    maxTags?: number;
 }
 
 const {
@@ -29,6 +30,7 @@ const {
     size = "medium",
     showImage = true,
     maxTechStack = 4,
+    maxTags = 3,
 } = Astro.props;
 
 // 状态样式映射
@@ -163,12 +165,32 @@ const sizeClasses = getSizeClasses(size);
         )}
         <!-- 标签 -->
         {project.tags && project.tags.length > 0 && (
-            <div class="flex flex-wrap gap-1 mb-4">
-                {project.tags.map((tag) => (
+            <div class="flex flex-wrap gap-1 mb-4" data-tags-container data-max-visible={maxTags}>
+                {project.tags.slice(0, maxTags).map((tag) => (
                     <span class={`px-2 py-1 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 rounded-sm ${sizeClasses.tech}`}>
                         #{tag}
                     </span>
                 ))}
+                {project.tags.length > maxTags && (
+                    <>
+                        {project.tags.slice(maxTags).map((tag) => (
+                            <span 
+                                class={`hidden px-2 py-1 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 rounded-sm ${sizeClasses.tech} tags-hidden`}
+                                data-tag-hidden
+                            >
+                                #{tag}
+                            </span>
+                        ))}
+                        <button 
+                            type="button"
+                            class={`px-2 py-1 bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 rounded-sm cursor-pointer hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors ${sizeClasses.tech}`}
+                            data-tags-toggle
+                            data-hidden-count={project.tags.length - maxTags}
+                        >
+                            +{project.tags.length - maxTags}
+                        </button>
+                    </>
+                )}
             </div>
         )}
         <!-- 链接 -->
@@ -206,6 +228,37 @@ const sizeClasses = getSizeClasses(size);
             button.addEventListener('click', (e) => {
                 const container = button.closest('[data-tech-stack-container]');
                 const hiddenElements = container?.querySelectorAll('[data-tech-hidden]');
+                const hiddenCount = parseInt(button.getAttribute('data-hidden-count') || '0');
+                
+                if (hiddenElements && hiddenElements.length > 0) {
+                    const isExpanded = !hiddenElements[0].classList.contains('hidden');
+                    
+                    if (isExpanded) {
+                        // Сворачиваем: скрываем все скрытые элементы
+                        hiddenElements.forEach(el => {
+                            el.classList.add('hidden');
+                        });
+                        button.textContent = `+${hiddenCount}`;
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Раскрываем: показываем все скрытые элементы
+                        hiddenElements.forEach(el => {
+                            el.classList.remove('hidden');
+                        });
+                        button.textContent = '−';
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                }
+            });
+        });
+
+        // Раскрытие списка тегов при клике на "+"
+        const tagsToggleButtons = document.querySelectorAll('[data-tags-toggle]');
+        
+        tagsToggleButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const container = button.closest('[data-tags-container]');
+                const hiddenElements = container?.querySelectorAll('[data-tag-hidden]');
                 const hiddenCount = parseInt(button.getAttribute('data-hidden-count') || '0');
                 
                 if (hiddenElements && hiddenElements.length > 0) {
