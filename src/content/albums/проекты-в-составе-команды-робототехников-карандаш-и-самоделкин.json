@@ -10,10 +10,6 @@
     },
     {
       "tags": [],
-      "src": "/images/ezgif-4-b6a157a212.gif"
-    },
-    {
-      "tags": [],
       "src": "/images/voic3command3r.jpg"
     },
     {
@@ -31,7 +27,7 @@
   ],
   "layout": "masonry",
   "date": "2016-11-08T08:00:00.000+04:00",
-  "visible": true,
+  "visible": false,
   "cover": "/images/maxresdefault.jpg",
   "title": "Проекты в составе команды робототехников \"Карандаш и Самоделкин\"",
   "tags": [],
