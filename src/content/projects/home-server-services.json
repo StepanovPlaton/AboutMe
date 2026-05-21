@@ -9,7 +9,7 @@
     "Debian",
     "Podman"
   ],
-  "status": "in-progress",
+  "status": "completed",
   "title": "Home Server Services",
   "tags": [],
   "description": "Полный набор сервисов в Docker для организации моего домашнего сервера!",
