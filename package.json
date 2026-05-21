@@ -9,9 +9,10 @@
 		"lint": "biome check --write ./src",
 		"format": "biome format --write ./src",
 		"check": "astro check",
-		"dev": "astro dev",
-		"build": "node scripts/copy-iconify.cjs && astro build",
-		"copy-iconify": "node scripts/copy-iconify.cjs",
+		"dev": "node scripts/collect-icons.mjs && node scripts/generate-site-icons.mjs && astro dev",
+		"icons:collect": "node scripts/collect-icons.mjs",
+		"icons:generate": "node scripts/generate-site-icons.mjs",
+		"build": "node scripts/collect-icons.mjs && node scripts/generate-site-icons.mjs && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
 		"new-post": "node scripts/new-post.js"
@@ -44,8 +45,6 @@
 		"@iconify-json/mingcute": "^1.2.5",
 		"@iconify-json/skill-icons": "^1.2.3",
 		"@iconify-json/vscode-icons": "^1.2.40",
-		"@iconify/utils": "^2.3.0",
-		"@iconify/svelte": "^5.2.1",
 		"@swup/astro": "^1.7.0",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.18",
@@ -65,7 +64,6 @@
 		"marked": "^17.0.1",
 		"mdast-util-to-string": "^4.0.0",
 		"node-html-parser": "^7.0.2",
-		"iconify-icon": "1.0.7",
 		"overlayscrollbars": "^2.14.0",
 		"photoswipe": "^5.4.4",
 		"reading-time": "^1.5.0",
@@ -95,7 +93,8 @@
 		"@types/markdown-it": "^14.1.2",
 		"@types/mdast": "^4.0.4",
 		"@types/sanitize-html": "^2.16.0",
-		"postcss-import": "^16.1.1"
+		"postcss-import": "^16.1.1",
+		"@iconify/utils": "^2.3.0"
 	},
 	"packageManager": "pnpm@9.14.4"
 }

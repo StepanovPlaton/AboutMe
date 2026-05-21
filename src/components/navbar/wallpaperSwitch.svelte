@@ -1,5 +1,5 @@
 <script lang="ts">
-import Icon from "@iconify/svelte";
+import SiteIcon from "@components/common/SiteIcon.svelte";
 import { onMount } from "svelte";
 
 import { BREAKPOINT_LG } from "@/constants/breakpoints";
@@ -66,13 +66,13 @@ onMount(() => {
 <div class="relative z-50" role="menu" tabindex="-1" onmouseleave={closePanel}>
     <button aria-label="Wallpaper Mode" role="menuitem" class="relative btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="wallpaper-mode-switch" onmouseenter={openPanel} onclick={() => { if (window.innerWidth < BREAKPOINT_LG) { openPanel(); } else { toggleWallpaperMode(); } }}>
         <div class="absolute" class:opacity-0={mode !== WALLPAPER_BANNER}>
-            <Icon icon="material-symbols:image-outline" class="text-[1.25rem]"></Icon>
+            <SiteIcon icon="material-symbols:image-outline" class="text-[1.25rem]"/>
         </div>
         <div class="absolute" class:opacity-0={mode !== WALLPAPER_FULLSCREEN}>
-            <Icon icon="material-symbols:wallpaper" class="text-[1.25rem]"></Icon>
+            <SiteIcon icon="material-symbols:wallpaper" class="text-[1.25rem]"/>
         </div>
         <div class="absolute" class:opacity-0={mode !== WALLPAPER_NONE}>
-            <Icon icon="material-symbols:hide-image-outline" class="text-[1.25rem]"></Icon>
+            <SiteIcon icon="material-symbols:hide-image-outline" class="text-[1.25rem]"/>
         </div>
     </button>
     <div id="wallpaper-mode-panel" class="absolute transition top-11 -right-2 pt-5" class:float-panel-closed={!isOpen}>
@@ -82,7 +82,7 @@ onMount(() => {
                     isLast={false}
                     onclick={() => switchWallpaperMode(WALLPAPER_BANNER)}
             >
-                <Icon icon="material-symbols:image-outline" class="text-[1.25rem] mr-3"></Icon>
+                <SiteIcon icon="material-symbols:image-outline" class="text-[1.25rem] mr-3"/>
                 {i18n(I18nKey.wallpaperBanner)}
             </DropdownItem>
             <DropdownItem
@@ -90,7 +90,7 @@ onMount(() => {
                     isLast={false}
                     onclick={() => switchWallpaperMode(WALLPAPER_FULLSCREEN)}
             >
-                <Icon icon="material-symbols:wallpaper" class="text-[1.25rem] mr-3"></Icon>
+                <SiteIcon icon="material-symbols:wallpaper" class="text-[1.25rem] mr-3"/>
                 {i18n(I18nKey.wallpaperFullscreen)}
             </DropdownItem>
             <DropdownItem
@@ -98,7 +98,7 @@ onMount(() => {
                     isLast={true}
                     onclick={() => switchWallpaperMode(WALLPAPER_NONE)}
             >
-                <Icon icon="material-symbols:hide-image-outline" class="text-[1.25rem] mr-3"></Icon>
+                <SiteIcon icon="material-symbols:hide-image-outline" class="text-[1.25rem] mr-3"/>
                 {i18n(I18nKey.wallpaperNone)}
             </DropdownItem>
         </DropdownPanel>

@@ -89,12 +89,6 @@ importers:
       '@iconify-json/vscode-icons':
         specifier: ^1.2.40
         version: 1.2.50
-      '@iconify/svelte':
-        specifier: ^5.2.1
-        version: 5.2.1(svelte@5.49.1)
-      '@iconify/utils':
-        specifier: ^2.3.0
-        version: 2.3.0
       '@swup/astro':
         specifier: ^1.7.0
         version: 1.7.0
@@ -134,9 +128,6 @@ importers:
       hastscript:
         specifier: ^9.0.1
         version: 9.0.1
-      iconify-icon:
-        specifier: 1.0.7
-        version: 1.0.7
       js-yaml:
         specifier: ^4.1.1
         version: 4.1.1
@@ -222,6 +213,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.3.13
         version: 2.3.13
+      '@iconify/utils':
+        specifier: ^2.3.0
+        version: 2.3.0
       '@rollup/plugin-yaml':
         specifier: ^4.1.2
         version: 4.1.2(rollup@2.79.2)
@@ -1394,11 +1388,6 @@ packages:
 
   '@iconify-json/vscode-icons@1.2.50':
     resolution: {integrity: sha512-XqG9nO1m+IiY8/RvT5BJjM/eG3CDRXBGRRPqR/MAcVi734yZ0Pa+jqObshZfnpUeIsuDKNn9C/7ZW00ART6kog==}
-
-  '@iconify/svelte@5.2.1':
-    resolution: {integrity: sha512-zHmsIPmnIhGd5gc95bNN5FL+GifwMZv7M2rlZEpa7IXYGFJm/XGHdWf6PWQa6OBoC+R69WyiPO9NAj5wjfjbow==}
-    peerDependencies:
-      svelte: '>5.0.0'
 
   '@iconify/tools@4.2.0':
     resolution: {integrity: sha512-WRxPva/ipxYkqZd1+CkEAQmd86dQmrwH0vwK89gmp2Kh2WyyVw57XbPng0NehP3x4V1LzLsXUneP1uMfTMZmUA==}
@@ -3368,9 +3357,6 @@ packages:
   https-proxy-agent@7.0.6:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
-
-  iconify-icon@1.0.7:
-    resolution: {integrity: sha512-MxaO3Jhf3f5ymPWGHR9x74f90TNKcq1D+B2iGucGhVtqAgbC9EtM06kKiTGH2CKELNnexckwhrA3/+OpT4HKFw==}
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -6949,11 +6935,6 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/svelte@5.2.1(svelte@5.49.1)':
-    dependencies:
-      '@iconify/types': 2.0.0
-      svelte: 5.49.1
-
   '@iconify/tools@4.2.0':
     dependencies:
       '@iconify/types': 2.0.0
@@ -9198,10 +9179,6 @@ snapshots:
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
-
-  iconify-icon@1.0.7:
-    dependencies:
-      '@iconify/types': 2.0.0
 
   iconv-lite@0.6.3:
     dependencies:

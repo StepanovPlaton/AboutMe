@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onDestroy, onMount } from "svelte";
-import Icon from "@iconify/svelte";
+import SiteIcon from "@components/common/SiteIcon.svelte";
 
 import { BREAKPOINT_LG } from "@constants/breakpoints";
 import { getTranslateLanguageFromConfig, getSiteLanguage, setStoredLanguage, getDefaultLanguage } from "@/utils/language";
@@ -99,7 +99,7 @@ onDestroy(() => {
         onclick={() => { if (window.innerWidth < BREAKPOINT_LG) { openPanel(); } else { togglePanel(); } }}
         onmouseenter={openPanel}
     >
-        <Icon icon="material-symbols:translate" class="text-[1.25rem] transition" />
+        <SiteIcon icon="material-symbols:translate" class="text-[1.25rem] transition" />
     </button>
     <!-- 翻译面板 -->
     <div id="translate-panel-wrapper" class="fixed top-14.5 pt-5 right-4 w-[calc(100vw-2rem)] max-w-64 md:absolute md:top-11 md:right-0 md:w-64 md:pt-5 transition-all z-50" class:float-panel-closed={!isOpen}>

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onDestroy, onMount } from "svelte";
 import { slide } from "svelte/transition";
-import Icon from "@iconify/svelte";
+import SiteIcon from "@components/common/SiteIcon.svelte";
 
 import type { MusicPlayerTrack } from "@/types/config";
 import { musicPlayerConfig } from "@/config";
@@ -557,10 +557,10 @@ onDestroy(() => {
 {#if showError}
 <div class="music-player-error fixed bottom-20 right-4 z-60 max-w-sm onload-animation-up">
     <div class="bg-red-500 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 animate-slide-up">
-        <Icon icon="material-symbols:error" class="text-xl shrink-0" />
+        <SiteIcon icon="material-symbols:error" class="text-xl shrink-0" />
         <span class="text-sm flex-1">{errorMessage}</span>
         <button onclick={hideError} class="text-white/80 hover:text-white transition-colors">
-            <Icon icon="material-symbols:close" class="text-lg" />
+            <SiteIcon icon="material-symbols:close" class="text-lg" />
         </button>
     </div>
 </div>
@@ -575,7 +575,7 @@ onDestroy(() => {
             <div class="playlist-header flex items-center justify-between p-4 border-b border-(--line-divider)">
                 <h3 class="text-lg font-semibold text-90">{i18n(Key.playlist)}</h3>
                 <button class="btn-plain w-8 h-8 rounded-lg" onclick={togglePlaylist}>
-                    <Icon icon="material-symbols:close" class="text-lg" />
+                    <SiteIcon icon="material-symbols:close" class="text-lg" />
                 </button>
             </div>
             <div class="playlist-content overflow-y-auto max-h-80">
@@ -595,9 +595,9 @@ onDestroy(() => {
                         aria-label="播放 {song.title} - {song.artist}">
                         <div class="w-6 h-6 flex items-center justify-center">
                             {#if index === currentIndex && isPlaying}
-                                <Icon icon="material-symbols:graphic-eq" class="text-(--primary) animate-pulse" />
+                                <SiteIcon icon="material-symbols:graphic-eq" class="text-(--primary) animate-pulse" />
                             {:else if index === currentIndex}
-                                <Icon icon="material-symbols:pause" class="text-(--primary)" />
+                                <SiteIcon icon="material-symbols:pause" class="text-(--primary)" />
                             {:else}
                                 <span class="text-sm text-(--content-meta)">{index + 1}</span>
                             {/if}
@@ -636,7 +636,7 @@ onDestroy(() => {
          tabindex="0"
          aria-label={i18n(Key.musicExpand)}>
         {#if isLoading}
-            <Icon icon="eos-icons:loading" class="text-white text-lg" />
+            <SiteIcon icon="material-symbols:progress-activity" class="text-white text-lg" />
         {:else if isPlaying}
             <div class="flex space-x-0.5">
                 <div class="w-0.5 h-3 bg-white rounded-full animate-pulse"></div>
@@ -644,7 +644,7 @@ onDestroy(() => {
                 <div class="w-0.5 h-2 bg-white rounded-full animate-pulse" style="animation-delay: 300ms;"></div>
             </div>
         {:else}
-            <Icon icon="material-symbols:music-note" class="text-white text-lg" />
+            <SiteIcon icon="material-symbols:music-note" class="text-white text-lg" />
         {/if}
     </div>
     <!-- 展开状态的完整播放器（封面圆形） -->
@@ -671,13 +671,13 @@ onDestroy(() => {
                 <button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center"
                         onclick={toggleMode}
                         title={mode === "meting" ? i18n(Key.musicSwitchToLocal) : i18n(Key.musicSwitchToMeting)}>
-                    <Icon icon={mode === "meting" ? "material-symbols:cloud" : "material-symbols:folder"} class="text-lg" />
+                    <SiteIcon icon={mode === "meting" ? "material-symbols:cloud" : "material-symbols:folder"} class="text-lg" />
                 </button>
                 <button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center"
                         class:text-(--primary)={showPlaylist}
                         onclick={togglePlaylist}
                         title={i18n(Key.playlist)}>
-                    <Icon icon="material-symbols:queue-music" class="text-lg" />
+                    <SiteIcon icon="material-symbols:queue-music" class="text-lg" />
                 </button>
             </div>
         </div>
@@ -717,27 +717,27 @@ onDestroy(() => {
                     class:btn-plain={!isShuffled}
                     onclick={toggleShuffle}
                     disabled={playlist.length <= 1}>
-                <Icon icon="material-symbols:shuffle" class="text-lg" />
+                <SiteIcon icon="material-symbols:shuffle" class="text-lg" />
             </button>
             <button class="btn-plain w-10 h-10 rounded-lg" onclick={previousSong}
                     disabled={playlist.length <= 1}>
-                <Icon icon="material-symbols:skip-previous" class="text-xl" />
+                <SiteIcon icon="material-symbols:skip-previous" class="text-xl" />
             </button>
             <button class="btn-regular w-12 h-12 rounded-full"
                     class:opacity-50={isLoading}
                     disabled={isLoading}
                     onclick={togglePlay}>
                 {#if isLoading}
-                    <Icon icon="eos-icons:loading" class="text-xl" />
+                    <SiteIcon icon="material-symbols:progress-activity" class="text-xl" />
                 {:else if isPlaying}
-                    <Icon icon="material-symbols:pause" class="text-xl" />
+                    <SiteIcon icon="material-symbols:pause" class="text-xl" />
                 {:else}
-                    <Icon icon="material-symbols:play-arrow" class="text-xl" />
+                    <SiteIcon icon="material-symbols:play-arrow" class="text-xl" />
                 {/if}
             </button>
             <button class="btn-plain w-10 h-10 rounded-lg" onclick={nextSong}
                     disabled={playlist.length <= 1}>
-                <Icon icon="material-symbols:skip-next" class="text-xl" />
+                <SiteIcon icon="material-symbols:skip-next" class="text-xl" />
             </button>
             <!-- 循环按钮高亮 -->
             <button class="w-10 h-10 rounded-lg"
@@ -745,22 +745,22 @@ onDestroy(() => {
                     class:btn-plain={isRepeating === 0}
                     onclick={toggleRepeat}>
                 {#if isRepeating === 1}
-                    <Icon icon="material-symbols:repeat-one" class="text-lg" />
+                    <SiteIcon icon="material-symbols:repeat-one" class="text-lg" />
                 {:else if isRepeating === 2}
-                    <Icon icon="material-symbols:repeat" class="text-lg" />
+                    <SiteIcon icon="material-symbols:repeat" class="text-lg" />
                 {:else}
-                    <Icon icon="material-symbols:repeat" class="text-lg opacity-50" />
+                    <SiteIcon icon="material-symbols:repeat" class="text-lg opacity-50" />
                 {/if}
             </button>
         </div>
         <div class="bottom-controls flex items-center gap-2">
             <button class="btn-plain w-8 h-8 rounded-lg" onclick={toggleMute}>
                 {#if isMuted || volume === 0}
-                    <Icon icon="material-symbols:volume-off" class="text-lg" />
+                    <SiteIcon icon="material-symbols:volume-off" class="text-lg" />
                 {:else if volume < 0.5}
-                    <Icon icon="material-symbols:volume-down" class="text-lg" />
+                    <SiteIcon icon="material-symbols:volume-down" class="text-lg" />
                 {:else}
-                    <Icon icon="material-symbols:volume-up" class="text-lg" />
+                    <SiteIcon icon="material-symbols:volume-up" class="text-lg" />
                 {/if}
             </button>
             <div class="flex-1 h-2 bg-(--btn-regular-bg) rounded-full cursor-pointer"
@@ -787,7 +787,7 @@ onDestroy(() => {
             <button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center"
                     onclick={toggleCollapse}
                     title={i18n(Key.musicCollapse)}>
-                <Icon icon="material-symbols:expand-more" class="text-lg" />
+                <SiteIcon icon="material-symbols:expand-more" class="text-lg" />
             </button>
         </div>
     </div>

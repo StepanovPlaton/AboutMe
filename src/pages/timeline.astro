@@ -13,7 +13,6 @@ import {
 } from "@utils/timeline";
 import { i18n } from "@i18n/translation";
 import I18nKey from "@i18n/i18nKey";
-import IconifyLoader from "@components/common/iconifyLoader.astro";
 import TimelineItem from "@components/data/timelineItem.astro";
 import GridLayout from "@layouts/grid.astro";
 import BackwardButton from "@components/backwardButton.astro";
@@ -21,11 +20,6 @@ import BackwardButton from "@components/backwardButton.astro";
 
 const title = LinkPresets[LinkPreset.Timeline].name;
 const subtitle = LinkPresets[LinkPreset.Timeline].description;
-
-// 收集所有时间线图标用于预加载
-const allIcons = timelineData
-    .map((item) => item.icon || getTypeIcon(item.type))
-    .filter(Boolean);
 
 // 获取时间线统计信息
 const stats = getTimelineStats();
@@ -53,8 +47,6 @@ const getTypeIcon = (type: string) => {
 ---
 
 <GridLayout title={title} description={subtitle}>
-    <!-- 图标加载器，预加载所有时间线图标 -->
-    <IconifyLoader preloadIcons={allIcons} />
     <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <BackwardButton currentPath={Astro.url.pathname} />
@@ -186,34 +178,3 @@ const getTypeIcon = (type: string) => {
         </div>
     </div>
 </GridLayout>
-
-<script>
-    // 确保图标库已加载，并处理页面导航
-    document.addEventListener('DOMContentLoaded', () => {
-        // 如果图标加载器存在，确保图标已加载
-        if (window.__iconifyLoader) {
-            window.__iconifyLoader.load().then(() => {
-                // 图标加载完成后，触发时间线项目的重新渲染
-                const timelineItems = document.querySelectorAll('.timeline-item');
-                timelineItems.forEach(item => {
-                    item.dispatchEvent(new CustomEvent('iconify-ready'));
-                });
-            }).catch(error => {
-                console.error('Failed to load icons on timeline page:', error);
-            });
-        }
-    });
-
-    // 处理页面导航时的图标重新加载
-    if (typeof window !== 'undefined') {
-        // 监听页面显示事件（包括前进/后退导航）
-        window.addEventListener('pageshow', (event) => {
-            if (event.persisted && window.__iconifyLoader) {
-                // 页面从缓存恢复，重新检查图标状态
-                setTimeout(() => {
-                    window.__iconifyLoader.load().catch(console.error);
-                }, 100);
-            }
-        });
-    }
-</script>

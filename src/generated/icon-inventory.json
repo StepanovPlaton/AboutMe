@@ -1,0 +1,136 @@
+{
+  "material-symbols": [
+    "archive",
+    "article",
+    "book",
+    "book-2-outline-rounded",
+    "calendar-today-outline-rounded",
+    "chevron-left-rounded",
+    "chevron-right-rounded",
+    "close",
+    "code",
+    "copyright-outline-rounded",
+    "dark-mode-outline-rounded",
+    "edit-calendar-outline-rounded",
+    "emoji-events",
+    "error",
+    "error-outline",
+    "event",
+    "expand-more",
+    "format-list-bulleted-rounded",
+    "graphic-eq",
+    "group",
+    "help-outline",
+    "hide-image-outline",
+    "history-rounded",
+    "home",
+    "home-rounded",
+    "image-outline",
+    "info",
+    "keyboard-arrow-down-rounded",
+    "keyboard-arrow-up-rounded",
+    "link",
+    "mail-outline",
+    "menu-rounded",
+    "more-horiz",
+    "movie",
+    "music-note",
+    "notes-rounded",
+    "palette-outline",
+    "pause",
+    "photo-library",
+    "play-arrow",
+    "progress-activity",
+    "psychology",
+    "queue-music",
+    "radio-button-partial-outline",
+    "repeat",
+    "repeat-one",
+    "rss-feed",
+    "schedule-outline-rounded",
+    "school",
+    "search-off",
+    "security",
+    "sentiment-sad",
+    "shuffle",
+    "skip-next",
+    "skip-previous",
+    "star",
+    "tag-rounded",
+    "timeline",
+    "translate",
+    "visibility-outline-rounded",
+    "volume-down",
+    "volume-off",
+    "volume-up",
+    "wallpaper",
+    "wb-sunny-outline-rounded",
+    "work"
+  ],
+  "fa6-solid": [
+    "arrow-rotate-left",
+    "arrow-up-right-from-square",
+    "eye",
+    "xmark"
+  ],
+  "fa6-brands": [
+    "creative-commons",
+    "git-alt",
+    "telegram"
+  ],
+  "mdi": [
+    "car-outline",
+    "certificate-outline",
+    "pin"
+  ],
+  "fa6-regular": [
+    "address-card"
+  ],
+  "logos": [
+    "angular-icon",
+    "c-plusplus",
+    "css-3",
+    "docker-icon",
+    "git-icon",
+    "html-5",
+    "javascript",
+    "linux-tux",
+    "nestjs",
+    "nextjs-icon",
+    "openai-icon",
+    "python",
+    "react",
+    "typescript-icon",
+    "vue"
+  ],
+  "skill-icons": [
+    "neovim-dark"
+  ],
+  "vscode-icons": [
+    "file-type-cursorrules"
+  ],
+  "devicon": [
+    "java",
+    "postgresql"
+  ],
+  "material-icon-theme": [
+    "kotlin"
+  ],
+  "hugeicons": [
+    "mentoring",
+    "office",
+    "test-tube"
+  ],
+  "mingcute": [
+    "bridge-fill",
+    "robot-line",
+    "volleyball-fill",
+    "vue-fill"
+  ],
+  "iconoir": [
+    "agile"
+  ],
+  "game-icons": [
+    "podium-winner"
+  ]
+}

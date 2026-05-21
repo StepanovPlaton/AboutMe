@@ -31,6 +31,28 @@ import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+import { fileURLToPath } from "node:url";
+import iconInclude from "./src/generated/icon-include.mjs";
+
+const iconIncludeFile = fileURLToPath(
+    new URL("./src/generated/icon-include.mjs", import.meta.url),
+);
+
+/** Restart dev server when collect-icons updates astro-icon include */
+function iconIncludeHmr() {
+    return {
+        name: "icon-include-hmr",
+        configureServer(server) {
+            server.watcher.add(iconIncludeFile);
+            server.watcher.on("change", (file) => {
+                if (file === iconIncludeFile) {
+                    console.log("[icons] icon-include.mjs changed, restarting dev server…");
+                    server.restart();
+                }
+            });
+        },
+    };
+}
 
 
 // https://astro.build/config
@@ -75,12 +97,7 @@ export default defineConfig({
             },
         }),
         icon({
-            include: {
-                "fa6-brands": ["*"],
-                "fa6-regular": ["*"],
-                "fa6-solid": ["*"],
-                mdi: ["*"],
-            },
+            include: iconInclude,
         }),
         expressiveCode({
             themes: ["github-light", "github-dark"],
@@ -191,7 +208,7 @@ export default defineConfig({
         ],
     },
     vite: {
-        plugins: [tailwindcss()],
+        plugins: [tailwindcss(), iconIncludeHmr()],
         build: {
             rollupOptions: {
                 onwarn(warning, warn) {
