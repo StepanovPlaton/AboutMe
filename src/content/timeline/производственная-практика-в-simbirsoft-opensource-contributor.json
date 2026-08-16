@@ -1,0 +1,29 @@
+{
+  "skills": [
+    "TypeScript",
+    "React 18",
+    "MUI",
+    "Playwright",
+    "React Hook Form"
+  ],
+  "achievements": [],
+  "not_pin": true,
+  "endDate": "2026-06-30T20:00:00.000+04:00",
+  "startDate": "2026-05-01T10:00:00.000+04:00",
+  "title": "Производственная практика в \"Simbirsoft\", OpenSource Contributor",
+  "icon": "elusive-icons:opensource",
+  "links": [
+    {
+      "name": "Сайт OpenEverest",
+      "url": "https://openeverest.io",
+      "type": "project"
+    },
+    {
+      "name": "Сайт SimbirSoft",
+      "url": "https://www.simbirsoft.com",
+      "type": "other"
+    }
+  ],
+  "type": "education",
+  "description": "Я проходил производственную практику в компании SimbirSoft и стал участником международного open source проекта OpenEverest. В рамках своей работы я занимался разработкой административной панели OpenEverest и подготовкой к релизу v2"
+}
