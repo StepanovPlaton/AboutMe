@@ -1,0 +1,14 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/OpenProjectBoardWidgets",
+  "featured": false,
+  "startDate": "2026-06-25T20:43:00.000+04:00",
+  "techStack": [
+    "TypeScript",
+    "Cursor"
+  ],
+  "status": "in-progress",
+  "title": "OpenProjectBoardWidgets",
+  "tags": [],
+  "description": "Расширение для Chrome, которое обогащает карточки досок OpenProject через REST API\n\n",
+  "category": "actual"
+}
