@@ -1,6 +1,7 @@
 ---
-title: О моём опыте с Matrix на локальном сервере
+title: О моём опыте запуска мессенджера на локальном сервере
 published: 2026-08-16T19:40:00.000+04:00
+cover: /images/screenshot_4.png
 tags: []
 draft: false
 ---
