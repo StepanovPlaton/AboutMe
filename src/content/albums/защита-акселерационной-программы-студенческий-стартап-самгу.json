@@ -1,0 +1,35 @@
+{
+  "tags": [],
+  "layout": "masonry",
+  "columns": 2,
+  "photos": [
+    {
+      "tags": [],
+      "src": "/images/photo_2026-08-16_19-59-26.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/photo_2026-08-16_19-59-44.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/photo_2026-08-16_19-59-36.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/photo_2026-08-16_19-59-33.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/photo_2026-08-16_19-59-45.jpg"
+    },
+    {
+      "tags": [],
+      "src": "/images/диплом_compressed_page-0001.jpg"
+    }
+  ],
+  "visible": true,
+  "title": "Защита акселерационной программы \"Студенческий Стартап\" СамГУ",
+  "date": "2026-06-02T10:00:00.000+04:00",
+  "cover": "/images/photo_2026-08-16_19-59-45.jpg"
+}
