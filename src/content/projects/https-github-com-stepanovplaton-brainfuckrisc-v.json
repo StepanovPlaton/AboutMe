@@ -1,0 +1,15 @@
+{
+  "sourceCode": "https://github.com/StepanovPlaton/BrainFuckRISC-V",
+  "endDate": "",
+  "featured": false,
+  "startDate": "2026-08-16T20:40:00.000+04:00",
+  "techStack": [
+    "RISC-V",
+    "ASM"
+  ],
+  "status": "completed",
+  "title": "https://github.com/StepanovPlaton/BrainFuckRISC-V",
+  "tags": [],
+  "description": "Интерпретатор языка Brainfuck на ассемблере RISC-V (RV32I). 300 байт и никакого мошенничества!",
+  "category": "actual"
+}
