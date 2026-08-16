@@ -8,7 +8,7 @@
     "ASM"
   ],
   "status": "completed",
-  "title": "BrainFuckRISC-V",
+  "title": "BrainFuck RISC-V",
   "tags": [],
   "description": "Интерпретатор языка Brainfuck на ассемблере RISC-V (RV32I). 300 байт и никакого мошенничества!",
   "category": "actual"

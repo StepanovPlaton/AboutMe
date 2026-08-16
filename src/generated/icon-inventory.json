@@ -79,6 +79,7 @@
     "telegram"
   ],
   "mdi": [
+    "book-education-outline",
     "car-outline",
     "certificate-outline",
     "pin"
@@ -132,5 +133,8 @@
   ],
   "game-icons": [
     "podium-winner"
+  ],
+  "simple-icons": [
+    "opensourceinitiative"
   ]
 }

@@ -80,6 +80,7 @@ export default {
         "telegram"
     ],
     "mdi": [
+        "book-education-outline",
         "car-outline",
         "certificate-outline",
         "pin"
@@ -133,5 +134,8 @@ export default {
     ],
     "game-icons": [
         "podium-winner"
+    ],
+    "simple-icons": [
+        "opensourceinitiative"
     ]
 };

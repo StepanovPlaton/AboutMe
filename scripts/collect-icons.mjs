@@ -27,6 +27,7 @@ const KNOWN_PREFIXES = new Set([
     "material-icon-theme",
     "game-icons",
     "iconoir",
+    "simple-icons",
 ]);
 
 const ICON_PATTERN =

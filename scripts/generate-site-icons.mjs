@@ -24,6 +24,7 @@ const PACKAGE_BY_PREFIX = {
     "material-icon-theme": "@iconify-json/material-icon-theme",
     "game-icons": "@iconify-json/game-icons",
     iconoir: "@iconify-json/iconoir",
+    "simple-icons": "@iconify-json/simple-icons",
 };
 
 function loadIconSet(prefix) {
